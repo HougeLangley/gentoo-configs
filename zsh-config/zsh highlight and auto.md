@@ -18,7 +18,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
  
  - Append `zsh-autosuggestions & zsh-syntax-highlighting` to  `plugins()` like this 
  
- `plugins=(git zsh-autosuggestions zsh-syntax-highlighting)`
+ `plugins=(git adb battery colorize cp emoji golang history history-substring-search zsh-autosuggestions zsh-syntax-highlighting)`
  
  - Reopen terminal
 
