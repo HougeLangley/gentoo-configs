@@ -1,0 +1,13 @@
+app-admin/doas persist
+net-libs/nodejs -lto
+app-text/ghostscript-gpl -l10n_zh-CN
+media-fonts/noto cjk
+dev-lang/spidermonkey -lto
+gui-wm/sway wallpapers
+sys-auth/polkit elogind
+gnome-base/gnome-settings-daemon elogind
+gnome-base/gnome-control-center elogind
+x11-wm/mutter elogind udev
+sys-apps/accountsservice elogind
+gnome-base/gdm elogind
+net-misc/networkmanager -ppp elogind

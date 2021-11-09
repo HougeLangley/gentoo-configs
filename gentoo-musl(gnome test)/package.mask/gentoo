@@ -1,0 +1,8 @@
+sys-kernel/linux-headers::gentoo
+net-misc/connman::gentoo
+net-misc/rsync::gentoo
+media-libs/mesa::gentoo
+sys-auth/polkit::gentoo
+sys-apps/accountsservice::gentoo
+net-wireless/bluez::gentoo
+net-fs/samba::gentoo
