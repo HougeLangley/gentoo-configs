@@ -6,3 +6,4 @@ sys-auth/polkit::gentoo
 sys-apps/accountsservice::gentoo
 net-wireless/bluez::gentoo
 net-fs/samba::gentoo
+sys-fs/lvm2::gentoo
