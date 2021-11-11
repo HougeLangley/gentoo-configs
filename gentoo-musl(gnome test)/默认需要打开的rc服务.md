@@ -5,4 +5,6 @@ rc-update add net.enp1s0 default
 rc-update add sysklogd default
 rc-update add cronie default
 rc-update add sshd default
+rc-update add elogind default
+rc-update add display-manager default
 ```
