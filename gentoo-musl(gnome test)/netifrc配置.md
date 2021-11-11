@@ -7,11 +7,11 @@ Musl 目前安装 Network Mananger 会引入 `rust` 和 `spidermonkey` 两个包
 1. `ln -s /etc/init.d/net.lo /etc/init.d/net.enp1s0`
 2. `nano /etc/conf.d/net`
 3. 配置：
-`
+```
 config_enp1s0="192.168.122.2 netmask 255.255.255.0"
 routes_enp1s0="default via 192.168.122.1"
 dns_servers_enp1s0="8.8.8.8"
-`
+```
 4. `rc-update add net.enp1s0 default`
 
 重启后，实现静态网络链接。
