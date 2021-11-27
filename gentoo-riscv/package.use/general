@@ -1,0 +1,2 @@
+*/* PYTHON_TARGETS: -python2_7
+*/* pgo lto vulkan wayland zstd vala
