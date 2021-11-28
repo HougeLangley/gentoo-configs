@@ -1,3 +1,4 @@
 app-admin/doas persist
 app-text/ghostscript-gpl -l10n_zh-CN
 media-fonts/noto cjk
+net-libs/nodejs -lto
