@@ -15,3 +15,16 @@ dns_servers_enp1s0="8.8.8.8"
 4. `rc-update add net.enp1s0 default`
 
 重启后，实现静态网络链接。
+
+## 如果是在 PVE 中的 LXC 中配置 Gentoo 的网络，需要如下设置 ##
+
+1. `nano /etc/conf.d/net`
+2. 先将默认内容用注释，复制如下内容。
+```
+config_eth0="192.168.9.9 netmask 255.255.255.0"
+routes_eth0="default via 192.168.9.1"
+dns_servers_eth0="8.8.8.8"
+```
+3. `rc-service net.eth0 restart`
+
+网络完成链接。
