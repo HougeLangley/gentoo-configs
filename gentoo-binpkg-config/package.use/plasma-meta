@@ -1,0 +1,15 @@
+kde-plasma/plasma-meta accessibility colord discover grub plymouth pulseaudio sdk thunderbolt
+kde-plasma/plasma-desktop emoji telemetry
+kde-plasma/kdeplasma-addons share
+kde-plasma/plasma-workspace screencast telemetry
+kde-apps/kio-extras mtp openexr taglib
+kde-plasma/plasma-nm modemmanager openconnect
+kde-plasma/powerdevil brightness-control caps
+net-misc/networkmanager nftables connection-sharing
+kde-plasma/kwin caps multimedia screencast
+kde-plasma/plasma-vault networkmanager
+kde-plasma/ksystemstats networkmanager
+net-libs/libproxy networkmanager spidermonkey webkit
+kde-frameworks/kfilemetadata epub ffmpeg mobi office
+x11-misc/colord extra-print-profiles
+kde-apps/kde-apps-meta accessibility pim sdk

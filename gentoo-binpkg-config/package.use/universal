@@ -1,0 +1,7 @@
+*/* pgo lto vulkan cjk X wayland zstd vala clang llvm samba nfs vaapi webengine networkmanager -doc
+app-text/ghostscript-gpl -l10n_zh-CN
+app-admin/doas persist
+net-libs/nodejs -lto
+media-libs/libsdl2 gles2
+dev-vcs/git cgi highlight perforce
+

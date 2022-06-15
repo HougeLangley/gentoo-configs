@@ -1,0 +1,3 @@
+www-client/firefox geckodriver hwaccel screencast
+mail-client/thunderbird hwaccel
+app-office/libreoffice pdfimport postgres googledrive

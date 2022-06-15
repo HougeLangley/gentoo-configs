@@ -1,0 +1,198 @@
+# package.use# required by media-libs/mesa-22.1.1::gentoo[-video_cards_r300,-video_cards_radeon,-video_cards_r600,video_cards_radeonsi]
+# required by virtual/opengl-7.0-r2::gentoo
+# required by media-libs/glu-9.0.2::gentoo
+# required by virtual/glu-9.0-r2::gentoo
+# required by media-libs/freeglut-3.2.2::gentoo
+# required by app-text/mupdf-1.19.1::gentoo[opengl]
+# required by net-print/cups-filters-1.28.15::gentoo[pdf]
+# required by net-print/cups-2.4.2-r1::gentoo
+# required by app-text/ghostscript-gpl-9.56.1::gentoo[cups]
+>=x11-libs/libdrm-2.4.110 video_cards_radeon
+# required by dev-qt/qtwebengine-5.15.4_p20220526::gentoo
+# required by dev-qt/qtwebengine (argument)
+>=dev-qt/qtwebchannel-5.15.4 qml
+# required by dev-qt/qtwebengine-5.15.4_p20220526::gentoo
+# required by dev-qt/qtwebengine (argument)
+>=sys-libs/zlib-1.2.12-r2 minizip
+# required by media-sound/pulseaudio-daemon-16.0-r1::gentoo[alsa-plugin,alsa]
+# required by media-sound/pulseaudio-16.0::gentoo[daemon]
+# required by dev-qt/qtwebengine-5.15.4_p20220526::gentoo[pulseaudio]
+# required by dev-qt/qtwebengine (argument)
+>=media-plugins/alsa-plugins-1.2.6 pulseaudio
+# required by app-accessibility/orca-42.1::gentoo[python_single_target_python3_9,braille]
+# required by kde-plasma/plasma-meta-5.25.0::gentoo[accessibility]
+# required by kde-plasma/plasma-meta (argument)
+>=app-accessibility/brltty-6.4-r1 python
+# required by app-accessibility/orca-42.1::gentoo[python_single_target_python3_9,braille]
+# required by kde-plasma/plasma-meta-5.25.0::gentoo[accessibility]
+# required by kde-plasma/plasma-meta (argument)
+>=dev-libs/liblouis-3.20.0 python
+# required by app-accessibility/orca-42.1::gentoo[python_single_target_python3_9]
+# required by kde-plasma/plasma-meta-5.25.0::gentoo[accessibility]
+# required by kde-plasma/plasma-meta (argument)
+>=app-accessibility/speech-dispatcher-0.11.1 python
+# required by app-accessibility/brltty-6.4-r1::gentoo
+# required by app-accessibility/orca-42.1::gentoo[python_single_target_python3_9,braille]
+# required by kde-plasma/plasma-meta-5.25.0::gentoo[accessibility]
+# required by kde-plasma/plasma-meta (argument)
+>=dev-libs/libpcre2-10.40 pcre32
+# required by kde-plasma/kwin-5.25.0::gentoo[multimedia]
+# required by kde-plasma/plasma-desktop-5.25.0::gentoo
+# required by kde-plasma/plasma-meta-5.25.0::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=dev-qt/qtmultimedia-5.15.4-r1 gstreamer
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.0.4::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/racc-1.6.0::gentoo
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby30]
+>=dev-ruby/minitest-5.15.0 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.0.4::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/racc-1.6.0::gentoo
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby30]
+>=dev-ruby/power_assert-2.0.1 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.0.4::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/racc-1.6.0::gentoo
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby30]
+>=dev-ruby/rake-13.0.6-r1 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.0.4::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/racc-1.6.0::gentoo
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby30]
+>=dev-ruby/rbs-2.5.0 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.0.4::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/racc-1.6.0::gentoo
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby30]
+>=dev-ruby/rexml-3.2.5-r1 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.0.4::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/racc-1.6.0::gentoo
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby30]
+>=dev-ruby/rss-0.2.9-r1 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.0.4::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/racc-1.6.0::gentoo
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby30]
+>=dev-ruby/test-unit-3.5.3 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.0.4::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/racc-1.6.0::gentoo
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby30]
+>=dev-ruby/typeprof-0.21.2 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.0.4::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/racc-1.6.0::gentoo
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby30]
+>=dev-ruby/bundler-2.3.8 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.0.4::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/racc-1.6.0::gentoo
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby30]
+>=dev-ruby/did_you_mean-1.6.1 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.0.4::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/racc-1.6.0::gentoo
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby30]
+>=dev-ruby/json-2.6.2 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo[rdoc]
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.0.4::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/racc-1.6.0::gentoo
+>=dev-ruby/rdoc-6.4.0 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by net-libs/webkit-gtk-2.36.3::gentoo
+# required by net-libs/libproxy-0.4.17-r1::gentoo[webkit]
+# required by net-libs/signond-8.61::gentoo
+# required by net-libs/signon-oauth2-0.25::gentoo
+# required by kde-plasma/plasma-desktop-5.25.0::gentoo[kaccounts]
+# required by kde-plasma/plasma-meta-5.25.0::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=virtual/rubygems-17 ruby_targets_ruby31
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.0.4::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/racc-1.6.0::gentoo
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby30]
+# required by dev-lang/ruby-3.1.2-r1::gentoo[rdoc]
+# required by net-libs/webkit-gtk-2.36.3::gentoo
+# required by net-libs/libproxy-0.4.17-r1::gentoo[webkit]
+# required by net-libs/signond-8.61::gentoo
+# required by net-libs/signon-oauth2-0.25::gentoo
+# required by kde-plasma/plasma-desktop-5.25.0::gentoo[kaccounts]
+# required by kde-plasma/plasma-meta-5.25.0::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=dev-ruby/rubygems-3.3.8 ruby_targets_ruby31
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.1.2-r1::gentoo[rdoc]
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby31]
+# required by dev-ruby/racc-1.6.0::gentoo
+>=dev-ruby/psych-4.0.4 ruby_targets_ruby31
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.1.2-r1::gentoo[rdoc]
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby31]
+# required by dev-ruby/racc-1.6.0::gentoo
+>=dev-ruby/kpeg-1.3.1 ruby_targets_ruby31
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.1.2-r1::gentoo[rdoc]
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby31]
+# required by dev-ruby/rubygems-3.3.8::gentoo[ruby_targets_ruby30]
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby30]
+# required by dev-lang/ruby-3.0.4::gentoo
+# required by dev-ruby/minitest-5.15.0::gentoo[ruby_targets_ruby30]
+>=dev-ruby/racc-1.6.0 ruby_targets_ruby31
+# required by dev-ruby/psych-4.0.4::gentoo[ruby_targets_ruby31]
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby30]
+# required by dev-lang/ruby-3.1.2-r1::gentoo[rdoc]
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby31]
+# required by dev-ruby/racc-1.6.0::gentoo
+>=dev-ruby/stringio-3.0.2 ruby_targets_ruby31
+# required by dev-ruby/rubygems-3.3.8::gentoo[ruby_targets_ruby31]
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby30]
+# required by dev-lang/ruby-3.0.4::gentoo
+# required by dev-ruby/minitest-5.15.0::gentoo[ruby_targets_ruby30]
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by dev-ruby/power_assert-2.0.1::gentoo[ruby_targets_ruby31]
+# required by dev-ruby/test-unit-3.5.3::gentoo[ruby_targets_ruby30]
+>=virtual/ruby-ssl-12 ruby_targets_ruby31
+# required by kde-apps/krfb-22.04.2::gentoo[wayland]
+# required by kde-apps/kdenetwork-meta-22.04.2::gentoo
+# required by kde-apps/kde-apps-meta-22.04.2::gentoo[network]
+# required by kde-apps/kde-apps-meta (argument)
+>=sys-apps/xdg-desktop-portal-1.14.4 screencast
+# required by www-client/firefox-101.0.1::gentoo[system-libvpx]
+# required by firefox (argument)
+>=media-libs/libvpx-1.11.0 postproc
+# required by www-client/firefox-101.0.1::gentoo[pgo]
+# required by firefox (argument)
+>=x11-base/xorg-server-21.1.3-r3 xvfb
+# required by net-im/telegram-desktop-3.6.1-r1::gentoo
+# required by telegram-desktop (argument)
+>=media-video/ffmpeg-4.4.2 opus
+# required by app-office/libreoffice-7.3.4.2::gentoo[postgres]
+# required by app-office/libreoffice (argument)
+>=dev-db/postgresql-14.3 kerberos

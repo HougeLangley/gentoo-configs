@@ -1,0 +1,6 @@
+# zfs
+#sys-fs/zfs ~amd64
+>=sys-fs/zfs-9999 **
+# zfs-kmod
+#sys-fs/zfs-kmod ~amd64
+>=sys-fs/zfs-kmod-9999 **
