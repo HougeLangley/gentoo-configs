@@ -1,0 +1,3 @@
+app-emulation/libvirt audit bash-completion dtrace fuse glusterfs nfs parted pcap zfs lxc
+app-emulation/qemu glusterfs gnutls infiniband io-uring jack jemalloc lzo multipath nfs plugins spice ssh usbredir vde vhost-user-fs virgl virtfs vte snappy fuse
+

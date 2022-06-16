@@ -9,7 +9,7 @@ net-misc/networkmanager nftables connection-sharing
 kde-plasma/kwin caps multimedia screencast
 kde-plasma/plasma-vault networkmanager
 kde-plasma/ksystemstats networkmanager
-net-libs/libproxy networkmanager spidermonkey webkit
+net-libs/libproxy networkmanager spidermonkey
 kde-frameworks/kfilemetadata epub ffmpeg mobi office
 x11-misc/colord extra-print-profiles
 kde-apps/kde-apps-meta accessibility pim sdk

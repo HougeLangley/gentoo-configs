@@ -1,3 +1,10 @@
 www-client/firefox geckodriver hwaccel screencast
 mail-client/thunderbird hwaccel
 app-office/libreoffice pdfimport postgres googledrive
+app-i18n/fcitx-meta gtk2 rime
+app-i18n/fcitx-chinese-addons browser
+app-i18n/rime-data extra
+app-i18n/fcitx-gtk gtk4
+media-gfx/krita color-management heif openexr qtmedia vc webp
+media-video/obs-studio browser decklink nvenc pipewire pulseaudio v4l vlc
+app-shells/zsh maildir

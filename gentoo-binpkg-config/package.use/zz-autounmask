@@ -196,3 +196,19 @@
 # required by app-office/libreoffice-7.3.4.2::gentoo[postgres]
 # required by app-office/libreoffice (argument)
 >=dev-db/postgresql-14.3 kerberos
+# required by app-emulation/virt-manager-4.0.0::gentoo[gtk,-test]
+# required by app-emulation/virt-manager (argument)
+>=net-misc/spice-gtk-0.40 usbredir
+# required by app-emulation/libvirt-8.4.0::gentoo[parted]
+# required by app-emulation/libvirt-glib-4.0.0::gentoo
+# required by app-emulation/virt-manager-4.0.0::gentoo[-test]
+# required by app-emulation/virt-manager (argument)
+>=sys-block/parted-3.5 device-mapper
+# required by app-emulation/libvirt-8.4.0::gentoo[virt-network]
+# required by app-emulation/libvirt-glib-4.0.0::gentoo
+# required by app-emulation/virt-manager-4.0.0::gentoo[-test]
+# required by app-emulation/virt-manager (argument)
+>=net-dns/dnsmasq-2.86 script
+# required by media-video/obs-studio-27.2.4::gentoo
+# required by media-video/obs-studio (argument)
+>=media-video/ffmpeg-4.4.2 nvenc
