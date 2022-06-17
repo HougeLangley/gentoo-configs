@@ -10,3 +10,6 @@ media-video/obs-studio browser decklink nvenc pipewire pulseaudio v4l vlc
 app-shells/zsh maildir
 media-video/aegisub openal oss portaudio
 app-admin/keepassxc autotype browser keeshare
+www-client/chromium gtk4 kerberos screencast widevine
+www-client/vivaldi proprietary-codecs widevine
+app-office/calligra calligra_features_stage gsl okular spacenav

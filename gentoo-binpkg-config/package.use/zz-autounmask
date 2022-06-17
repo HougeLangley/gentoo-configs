@@ -240,3 +240,9 @@
 # required by media-video/aegisub-3.2.2_p20160518-r103::gentoo[-test,lua_single_target_luajit]
 # required by media-video/aegisub (argument)
 >=dev-lang/luajit-2.1.0_beta3_p20220127-r1 lua52compat
+# required by www-client/chromium-103.0.5060.33::gentoo
+# required by chromium (argument)
+>=net-libs/nodejs-18.3.0 inspector
+# required by app-office/calligra-3.2.1-r5::gentoo[calligra_features_karbon]
+# required by app-office/calligra (argument)
+>=media-gfx/pstoedit-3.75 plotutils
