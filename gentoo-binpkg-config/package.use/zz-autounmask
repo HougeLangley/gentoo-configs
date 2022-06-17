@@ -212,3 +212,31 @@
 # required by media-video/obs-studio-27.2.4::gentoo
 # required by media-video/obs-studio (argument)
 >=media-video/ffmpeg-4.4.2 nvenc
+# required by kde-apps/kamoso-22.04.2::gentoo
+# required by kde-apps/kdemultimedia-meta-22.04.2::gentoo[gstreamer]
+# required by kde-apps/kde-apps-meta-22.04.2::gentoo[multimedia]
+# required by @selected
+# required by @world (argument)
+>=media-plugins/gst-plugins-meta-1.20.2 v4l theora
+# required by media-plugins/gst-plugins-meta-1.20.2::gentoo
+# required by kde-apps/kamoso-22.04.2::gentoo
+# required by kde-apps/kdemultimedia-meta-22.04.2::gentoo[gstreamer]
+# required by kde-apps/kde-apps-meta-22.04.2::gentoo[multimedia]
+# required by @selected
+# required by @world (argument)
+>=media-libs/gst-plugins-base-1.20.2 theora
+# required by media-video/shotcut-21.12.24::gentoo
+# required by media-video/shotcut (argument)
+>=media-libs/mlt-7.6.0 jack
+# required by app-containers/lxd-5.0.0::gentoo
+# required by lxd (argument)
+>=dev-libs/raft-0.13.0 lz4
+# required by app-containers/lxd-5.0.0::gentoo
+# required by lxd (argument)
+>=dev-util/xdelta-3.0.11 lzma
+# required by app-containers/lxd-5.0.0::gentoo
+# required by lxd (argument)
+>=sys-fs/squashfs-tools-4.5.1 lzma
+# required by media-video/aegisub-3.2.2_p20160518-r103::gentoo[-test,lua_single_target_luajit]
+# required by media-video/aegisub (argument)
+>=dev-lang/luajit-2.1.0_beta3_p20220127-r1 lua52compat

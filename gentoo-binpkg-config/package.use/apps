@@ -8,3 +8,5 @@ app-i18n/fcitx-gtk gtk4
 media-gfx/krita color-management heif openexr qtmedia vc webp
 media-video/obs-studio browser decklink nvenc pipewire pulseaudio v4l vlc
 app-shells/zsh maildir
+media-video/aegisub openal oss portaudio
+app-admin/keepassxc autotype browser keeshare

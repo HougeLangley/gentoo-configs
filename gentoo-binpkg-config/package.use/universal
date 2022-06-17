@@ -1,4 +1,4 @@
-*/* pgo lto vulkan cjk X wayland zstd vala clang llvm samba nfs vaapi webengine networkmanager -doc
+*/* pgo lto vulkan cjk X wayland zstd vala clang llvm samba nfs vaapi webengine networkmanager pulseaudio gstreamer -doc
 app-text/ghostscript-gpl -l10n_zh-CN
 app-admin/doas persist
 net-libs/nodejs -lto
