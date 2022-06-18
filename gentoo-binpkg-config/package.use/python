@@ -1,0 +1,2 @@
+*/* PYTHON_TARGETS: -python2_7 python3_10
+*/* PYTHON_COMPAT: python3_10 python3_11
