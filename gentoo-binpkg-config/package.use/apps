@@ -14,3 +14,4 @@ www-client/chromium gtk4 kerberos screencast widevine
 www-client/vivaldi proprietary-codecs widevine
 app-office/calligra calligra_features_stage gsl okular spacenav
 net-misc/nextcloud-client dolphin
+sys-apps/flatpak introspection
