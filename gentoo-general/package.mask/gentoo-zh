@@ -1,2 +1,5 @@
-sys-kernel/linux-tkg-sources::gentoo-zh
-sys-kernel/xanmod-hybrid::gentoo-zh
+sys-kernel/liquorix-sources::gentoo-zh
+sys-kernel/xanmod-kernel::gentoo-zh
+sys-kernel/xanmod-source::gentoo-zh
+sys-kernel/xanmod-rt::gentoo-zh
+mail-client/thunderbird::gentoo-zh
