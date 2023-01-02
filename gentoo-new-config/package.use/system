@@ -1,0 +1,32 @@
+*/* PYTHON_TARGETS: python3_10 python3_11 python3_12
+*/* pgo lto vulkan wayland zstd vala clang llvm samba nfs emoji vaapi amf alsa mtp vdpau opencl -doc
+media-fonts/cantarell font_types_otf
+app-admin/doas persist
+app-i18n/fcitx-chinese-addons browser
+app-i18n/fcitx-meta gtk4
+media-fonts/firacode autohint
+www-client/firefox -clang geckodriver hwaccel screencast sndio
+sys-devel/gcc go graphite zstd
+app-text/ghostscript-gpl -l10n_zh-CN
+app-office/libreoffice -clang pdfimport gstreamer googledrive
+media-libs/mesa vulkan-overlay zink
+dev-lang/rust nightly parallel-compiler
+sys-apps/systemd gnuefi
+media-fonts/noto cjk
+net-libs/nodejs -lto
+media-libs/libsdl2 gles2
+net-im/telegram-desktop screencast -wayland
+media-video/pipewire sound-server pipewire-alsa v4l
+media-fonts/nerd-fonts firacode firamono meslo
+media-video/obs-studio pipewire v4l vlc
+media-libs/mlt opencv xine vidstab
+media-gfx/darktable avif colord flickr gamepad geolocation gmic gphoto2 heif opencl openexr tools webp
+app-emulation/libvirt audit dtrace firewalld fuse iscsi iscsi-direct libssh2 numa nfs parted pcap wireshark-plugins zfs lvm
+app-emulation/qemu accessibility bpf gnutls infiniband io-uring iscsi jack jemalloc lzo multipath nfs plugins spice ssh usbredir vde vhost-user-fs virgl virtfs vte snappy numa fuse systemtap
+www-client/vivaldi proprietary-codecs widevine
+app-office/wps-office cn
+media-video/pipewire extra gstreamer echo-cancel jack-client
+sys-fs/ntfs3g ntfsdecrypt suid
+dev-util/vulkan-tools cube -X
+media-gfx/fontforge extras woff2 libspiro
+media-fonts/cantarell autohint
