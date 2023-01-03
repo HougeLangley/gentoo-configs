@@ -1,0 +1,24 @@
+kde-apps/kate ~*
+net-libs/libqrtr-glib ~*
+xfce-extra/xfce4-pulseaudio-plugin ~*
+media-sound/pavucontrol-qt ~*
+media-libs/opencv ~*
+dev-cpp/eigen ~*
+net-libs/kdsoap ~*
+net-libs/kdsoap-ws-discovery-client ~*
+sys-process/btop ~*
+virtual/blas ~*
+virtual/opencl ~*
+<virtual/opencl-9999999 **
+dev-libs/opencl-icd-loader ~*
+dev-util/opencl-headers ~*
+media-libs/glew ~*
+media-libs/sdl-net ~*
+media-libs/sdl-image ~*
+sys-cluster/openmpi ~*
+app-arch/p7zip ~*
+dev-lang/yasm ~*
+dev-lang/nasm ~*
+app-portage/pfl ~*
+x11-themes/greybird ~*
+

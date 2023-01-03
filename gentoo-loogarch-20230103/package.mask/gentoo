@@ -1,0 +1,13 @@
+sys-devel/llvm-common::local
+sys-devel/llvm::local
+sys-devel/llvmgold::local
+sys-devel/clang-common::local
+sys-kernel/genkernel::gentoo
+www-client/firefox::gentoo
+sys-boot/grub::gentoo
+dev-lang/rust::gentoo
+virtual/rust::gentoo
+=sys-apps/file-5.42
+=sys-kernel/linux-headers-5.19_rc1
+net-fs/samba::gentoo
+=sys-libs/timezone-data-2022g

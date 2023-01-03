@@ -1,0 +1,3 @@
+media-gfx/flameshot ~*
+dev-qt/qtsingleapplication ~*
+dev-qt/qtlockedfile ~*

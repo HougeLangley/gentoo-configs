@@ -1,0 +1,4 @@
+games-strategy/0ad ~*
+net-libs/enet ~*
+net-libs/gloox ~*
+dev-util/premake ~*

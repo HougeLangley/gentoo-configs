@@ -1,0 +1,12 @@
+lxde-base/lxde-meta ~*
+lxde-base/lxappearance ~*
+lxde-base/lxde-icon-theme ~*
+lxde-base/lxde-common ~*
+lxde-base/lxinput ~*
+lxde-base/lxpanel ~*
+lxde-base/lxrandr ~*
+lxde-base/lxsession ~*
+lxde-base/lxtask ~*
+lxde-base/lxterminal ~*
+media-gfx/gpicview ~*
+x11-misc/obconf ~*

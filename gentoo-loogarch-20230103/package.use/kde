@@ -1,0 +1,7 @@
+#KDE
+kde-plasma/plasma-meta accessibility bluetooth colord discover grub gtk plymouth sdk thunderbolt
+kde-plasma/kwin caps multimedia plasma screencast
+media-libs/phonon gstreamer -vlc
+kde-apps/kde-apps-meta -education -games
+media-libs/opencv contrib
+kde-apps/kdemultimedia-meta gstreamer

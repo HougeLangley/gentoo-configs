@@ -1,0 +1,32 @@
+# For stage building, we cannot be sure the final unpack destination will have
+# xattr/fcaps support.  To be safe, we build stages without filecaps, but allow
+# filecaps to be turned back on @ next full world upgrade.  The ebuilds using
+# fcaps eclass will have more logic to safely fall back in case of missing
+# support.
+
+*/* -filecaps
+# required by xfce-extra/thunar-volman-4.16.0::gentoo
+# required by xfce-base/xfce4-meta-4.16-r2::gentoo
+# required by xfce4-meta (argument)
+>=xfce-base/thunar-4.17.8 udisks
+# required by sys-auth/polkit-0.120_p20220221-r1::gentoo[systemd]
+>=sys-apps/systemd-250.5-r1 policykit
+# required by gui-apps/swayidle-1.7.1::gentoo[systemd]
+# required by gui-wm/sway-1.7::gentoo[swayidle]
+# required by sway (argument)
+=sys-apps/systemd-250.4-r2 policykit
+# required by media-libs/mesa-22.1.0_rc4::gentoo
+# required by gui-libs/wlroots-0.15.1::gentoo
+# required by gui-wm/sway-1.7::gentoo
+# required by sway (argument)
+>=media-libs/libglvnd-1.4.0 X
+# required by media-libs/mesa-22.1.0_rc4::gentoo[-video_cards_r600,video_cards_radeonsi,-video_cards_radeon,-video_cards_r300]
+# required by gui-libs/wlroots-0.15.1::gentoo
+# required by gui-wm/sway-1.7::gentoo
+# required by sway (argument)
+>=x11-libs/libdrm-2.4.110 video_cards_radeon
+# required by media-libs/mesa-22.1.0_rc4::gentoo[-opencl,-video_cards_radeon,-video_cards_r600,llvm,video_cards_radeonsi]
+# required by gui-libs/wlroots-0.15.1::gentoo
+# required by gui-wm/sway-1.7::gentoo
+# required by sway (argument)
+>=sys-devel/llvm-11.1.0 llvm_targets_AMDGPU

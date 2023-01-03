@@ -1,0 +1,42 @@
+xfce-base/xfce4-meta ~*
+xfce-base/exo ~*
+xfce-base/garcon ~*
+xfce-base/libxfce4ui ~*
+xfce-base/libxfce4util ~*
+xfce-base/thunar ~*
+xfce-base/xfce4-appfinder ~*
+xfce-base/xfce4-panel ~*
+xfce-base/xfce4-session ~*
+xfce-base/xfce4-settings ~*
+x11-terms/xfce4-terminal ~*
+xfce-base/xfconf ~*
+xfce-base/xfdesktop ~*
+xfce-base/xfwm4 ~*
+# move xfce-extra/thunar-volman xfce-base/thunar-volman
+xfce-base/thunar-volman ~*
+# move xfce-extra/tumbler xfce-base/tumbler
+xfce-base/tumbler ~*
+x11-libs/libXres ~*
+x11-libs/libwnck ~*
+x11-libs/libXpresent ~*
+x11-libs/libxklavier ~*
+x11-drivers/xf86-input-evdev ~*
+x11-drivers/xf86-input-joystick ~*
+x11-drivers/xf86-video-amdgpu ~*
+x11-drivers/xf86-video-ati ~*
+dev-libs/libdbusmenu ~*
+app-text/gnome-doc-utils ~*
+app-text/scrollkeeper-dtd ~*
+gnome-base/gvfs ~*
+sys-fs/udisks ~*
+sys-libs/libblockdev ~*
+net-libs/libsoup ~*
+dev-libs/libatasmart ~*
+sys-block/parted ~*
+dev-libs/libbytesize ~*
+dev-util/xfce4-dev-tools ~*
+xfce-extra/xfce4-screensaver ~*
+virtual/freedesktop-icon-theme ~*
+# move xfce-extra/xfce4-power-manager xfce-base/xfce4-power-manager
+xfce-base/xfce4-power-manager ~*
+

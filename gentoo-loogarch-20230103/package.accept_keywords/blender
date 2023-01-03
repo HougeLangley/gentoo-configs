@@ -1,0 +1,13 @@
+media-gfx/blender ~*
+dev-python/zstandard ~*
+media-libs/opencolorio ~*
+media-libs/embree ~*
+media-libs/oidn ~*
+media-libs/openimageio ~*
+media-libs/opensubdiv ~*
+media-gfx/openvdb ~*
+dev-libs/c-blosc ~*
+media-libs/osl ~*
+media-libs/libharu ~*
+dev-libs/pugixml ~*
+dev-cpp/tbb ~*

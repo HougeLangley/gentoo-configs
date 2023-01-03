@@ -1,0 +1,49 @@
+# move app-i18n/fcitx5-meta app-i18n/fcitx-meta
+app-i18n/fcitx-meta ~*
+# move app-i18n/fcitx5 app-i18n/fcitx
+app-i18n/fcitx ~*
+# move app-i18n/fcitx5-configtool app-i18n/fcitx-configtool
+app-i18n/fcitx-configtool ~*
+# move app-i18n/fcitx5-chinese-addons app-i18n/fcitx-chinese-addons
+app-i18n/fcitx-chinese-addons ~*
+# move app-i18n/fcitx5-gtk app-i18n/fcitx-gtk
+app-i18n/fcitx-gtk ~*
+# move app-i18n/fcitx5-qt app-i18n/fcitx-qt
+app-i18n/fcitx-qt ~*
+app-i18n/libime ~*
+#=app-i18n/libime-9999 **
+kde-frameworks/kwidgetsaddons ~*
+kde-frameworks/kconfigwidgets ~*
+kde-frameworks/ki18n ~*
+kde-frameworks/kirigami ~*
+kde-frameworks/kdeclarative ~*
+kde-frameworks/kitemviews ~*
+kde-frameworks/kconfig ~*
+kde-frameworks/kglobalaccel ~*
+kde-frameworks/kiconthemes ~*
+kde-frameworks/kio ~*
+kde-frameworks/knotifications ~*
+kde-frameworks/kpackage ~*
+kde-frameworks/kservice ~*
+kde-frameworks/kdbusaddons ~*
+kde-frameworks/kdoctools ~*
+kde-frameworks/karchive ~*
+kde-frameworks/kauth ~*
+kde-frameworks/kbookmarks ~*
+kde-frameworks/kcodecs ~*
+kde-frameworks/kcompletion ~*
+kde-frameworks/kcrash ~*
+kde-frameworks/kguiaddons ~*
+kde-frameworks/kjobwidgets ~*
+kde-frameworks/ktextwidgets ~*
+kde-frameworks/kxmlgui ~*
+kde-frameworks/kwallet ~*
+kde-frameworks/kded ~*
+kde-frameworks/kinit ~*
+kde-frameworks/sonnet ~*
+kde-plasma/polkit-kde-agent ~*
+dev-qt/qtquickcontrols2 ~*
+dev-qt/qtgraphicaleffects ~*
+dev-libs/libfmt ~*
+x11-libs/xcb-imdkit ~*
+dev-libs/uthash ~*

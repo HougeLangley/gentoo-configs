@@ -1,0 +1,36 @@
+From 04a4ac2bfa8e965a5fc9d5b779dca317325cd8af Mon Sep 17 00:00:00 2001
+From: Fabian Vogt <fabian@ritter-vogt.de>
+Date: Fri, 16 Sep 2022 19:28:02 +0200
+Subject: [PATCH 3/3] LXQtCompilerSettings: Drop use of -Bsymbolic (#80)
+
+The use of "copy relocations" in ELF executables makes this rather dangerous,
+as that moves the definition of the symbol from the library to the executable,
+but the library still uses its own definition with -Bsymbolic.
+
+In particular, this led to pcmanfm-qt not saving settings properly
+(https://bugzilla.opensuse.org/show_bug.cgi?id=1195421), but can also cause
+worse issues like just crashing on startup.
+
+See https://bugreports.qt.io/browse/QTBUG-86173 and
+https://bugzilla.opensuse.org/show_bug.cgi?id=1175278 for some details and
+discussion about issues with -Bsymbolic.
+---
+ cmake/modules/LXQtCompilerSettings.cmake | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/cmake/modules/LXQtCompilerSettings.cmake b/cmake/modules/LXQtCompilerSettings.cmake
+index dfb0eaa..a8cb16d 100644
+--- a/cmake/modules/LXQtCompilerSettings.cmake
++++ b/cmake/modules/LXQtCompilerSettings.cmake
+@@ -164,7 +164,7 @@ if (CMAKE_COMPILER_IS_GNUCXX OR LXQT_COMPILER_IS_CLANGCXX)
+         set(NO_UNDEFINED_FLAGS "-Wl,--no-undefined")
+         # -Bsymbolic-functions: replace dynamic symbols used internally in
+         #                       shared libs with direct addresses.
+-        set(SYMBOLIC_FLAGS "-Wl,-Bsymbolic-functions -Wl,-Bsymbolic")
++        set(SYMBOLIC_FLAGS "-Wl,-Bsymbolic-functions")
+     endif()
+ 
+     set(CMAKE_SHARED_LINKER_FLAGS
+-- 
+2.37.3
+

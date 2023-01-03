@@ -1,0 +1,10 @@
+*/* pulseaudio alsa nfs samba -passwdqc
+# required by games-strategy/0ad-0.0.25b_alpha-r1::gentoo
+# required by 0ad (argument)
+>=media-libs/libsdl2-2.0.20-r1 opengl
+# required by app-portage/pfl-3.2-r2::gentoo[network-cron]
+# required by pfl (argument)
+>=sys-apps/util-linux-2.38 caps
+# required by media-gfx/blender-3.2.1::gentoo[ffmpeg]
+# required by blender (argument)
+>=media-video/ffmpeg-4.4.2 vpx vorbis theora xvid mp3 x264

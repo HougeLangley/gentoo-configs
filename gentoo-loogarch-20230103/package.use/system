@@ -1,0 +1,385 @@
+*/* wayland X xwayland qt5 egl glx vaapi
+sys-apps/systemd gnutls gnuefi
+media-libs/mesa llvm
+# required by net-misc/networkmanager-1.38.0::gentoo[wifi,-iwd]
+# required by networkmanager (argument)
+>=net-wireless/wpa_supplicant-2.10-r1 dbus
+# required by x11-libs/gtk+-3.24.34::gentoo
+# required by x11-themes/adwaita-icon-theme-3.32.0::gentoo
+>=x11-libs/cairo-1.16.0-r5 X
+# required by xfce-base/xfce4-panel-4.17.1::gentoo[dbusmenu]
+# required by xfce-base/xfce4-meta-4.16-r2::gentoo
+# required by xfce4-meta (argument)
+>=dev-libs/libdbusmenu-16.04.0-r1 gtk3
+# required by xfce-extra/thunar-volman-4.16.0::gentoo
+# required by xfce-base/xfce4-meta-4.16-r2::gentoo
+# required by xfce4-meta (argument)
+=xfce-base/thunar-4.16.11 udisks
+# required by xfce-base/thunar-4.17.8::gentoo[udisks]
+# required by xfce-base/xfdesktop-4.16.0::gentoo[thunar]
+# required by xfce-base/xfce4-meta-4.16-r2::gentoo
+# required by xfce4-meta (argument)
+>=gnome-base/gvfs-1.50.1-r1 udisks
+# required by xfce-base/thunar-4.17.8::gentoo[udisks]
+# required by xfce-base/xfdesktop-4.16.0::gentoo[thunar]
+# required by xfce-base/xfce4-meta-4.16-r2::gentoo
+# required by xfce4-meta (argument)
+=gnome-base/gvfs-1.50.0 udisks
+# required by xfce-base/thunar-4.17.8::gentoo[udisks]
+# required by xfce-base/xfdesktop-4.16.0::gentoo[thunar]
+# required by xfce-base/xfce4-meta-4.16-r2::gentoo
+# required by xfce4-meta (argument)
+=gnome-base/gvfs-1.48.1-r1 udisks
+# required by gnome-base/gnome-keyring-42.1::gentoo
+# required by virtual/secret-service-0::gentoo
+# required by app-crypt/libsecret-0.20.5-r3::gentoo
+>=app-crypt/gcr-3.41.0 gtk
+# required by x11-misc/xdg-utils-1.1.3_p20210805::gentoo
+# required by kde-frameworks/kf-env-5::gentoo
+# required by kde-frameworks/kwindowsystem-5.94.0::gentoo
+# required by lxqt-base/liblxqt-1.1.0::gentoo
+# required by lxqt-base/lxqt-policykit-1.1.0::gentoo
+# required by lxqt-base/lxqt-meta-1.1.0::gentoo[policykit]
+# required by lxqt-base/lxqt-meta (argument)
+>=app-text/xmlto-0.0.28-r8 text
+# required by dev-qt/qtwayland-5.15.4::gentoo
+>=dev-qt/qtgui-5.15.4 egl
+# required by kde-frameworks/kcoreaddons-5.94.0::gentoo
+# required by kde-plasma/libkscreen-5.24.5::gentoo
+# required by lxqt-base/lxqt-config-1.1.0::gentoo[monitor]
+# required by lxqt-base/lxqt-meta-1.1.0::gentoo
+# required by lxqt-base/lxqt-meta (argument)
+>=dev-qt/qtcore-5.15.4 icu
+# required by net-im/telegram-desktop-3.6.1-r1::gentoo
+# required by telegram-desktop (argument)
+>=dev-qt/qtgui-5.15.4 jpeg dbus
+# required by net-im/telegram-desktop-3.6.1-r1::gentoo
+# required by telegram-desktop (argument)
+>=media-video/ffmpeg-4.4.2 opus
+# required by net-im/telegram-desktop-3.6.1-r1::gentoo
+# required by telegram-desktop (argument)
+>=sys-libs/zlib-1.2.12-r2 minizip
+# required by app-accessibility/orca-42.1::gentoo[python_single_target_python3_9,braille]
+# required by kde-plasma/plasma-meta-5.24.5::gentoo[accessibility]
+# required by plasma-meta (argument)
+>=app-accessibility/brltty-6.4-r1 python
+# required by app-accessibility/orca-42.1::gentoo[python_single_target_python3_9,braille]
+# required by kde-plasma/plasma-meta-5.24.5::gentoo[accessibility]
+# required by plasma-meta (argument)
+>=dev-libs/liblouis-3.20.0 python
+# required by app-accessibility/orca-42.1::gentoo[python_single_target_python3_9]
+# required by kde-plasma/plasma-meta-5.24.5::gentoo[accessibility]
+# required by plasma-meta (argument)
+>=app-accessibility/speech-dispatcher-0.11.1 python
+# required by app-accessibility/brltty-6.4-r1::gentoo
+# required by app-accessibility/orca-42.1::gentoo[python_single_target_python3_9,braille]
+# required by kde-plasma/plasma-meta-5.24.5::gentoo[accessibility]
+# required by plasma-meta (argument)
+>=dev-libs/libpcre2-10.40 pcre32
+# required by media-libs/phonon-vlc-0.11.3-r1::gentoo
+# required by media-libs/phonon-4.11.1-r1::gentoo[vlc]
+# required by kde-frameworks/khtml-5.94.0::gentoo
+# required by kde-apps/khelpcenter-22.04.1::gentoo
+# required by kde-plasma/plasma-meta-5.24.5::gentoo[handbook]
+# required by plasma-meta (argument)
+>=media-video/vlc-3.0.17.4 ogg dbus
+# required by media-libs/phonon-vlc-0.11.3-r1::gentoo
+# required by media-libs/phonon-4.11.1-r1::gentoo[vlc]
+# required by kde-frameworks/khtml-5.94.0::gentoo
+# required by kde-apps/khelpcenter-22.04.1::gentoo
+# required by kde-plasma/plasma-meta-5.24.5::gentoo[handbook]
+# required by plasma-meta (argument)
+=media-video/vlc-3.0.17.3-r2 dbus ogg
+# required by x11-misc/appmenu-gtk-module-0.7.3-r2::gentoo
+# required by kde-plasma/plasma-meta-5.24.5::gentoo[gtk]
+# required by plasma-meta (argument)
+>=dev-libs/glib-2.72.1 dbus
+# required by kde-plasma/sddm-kcm-5.24.5::gentoo
+# required by kde-plasma/plasma-meta-5.24.5::gentoo[sddm,display-manager]
+# required by plasma-meta (argument)
+>=kde-frameworks/kitemmodels-5.94.0 qml
+# required by kde-plasma/xdg-desktop-portal-kde-5.24.5-r1::gentoo
+# required by kde-plasma/plasma-meta-5.24.5::gentoo[desktop-portal]
+# required by plasma-meta (argument)
+>=dev-qt/qtprintsupport-5.15.4 cups
+# required by net-print/cups-filters-1.28.15::gentoo[postscript]
+# required by net-print/cups-2.4.2-r1::gentoo
+# required by dev-qt/qtprintsupport-5.15.4::gentoo[cups]
+# required by kde-plasma/xdg-desktop-portal-kde-5.24.5-r1::gentoo
+# required by kde-plasma/plasma-meta-5.24.5::gentoo[desktop-portal]
+# required by plasma-meta (argument)
+>=app-text/ghostscript-gpl-9.56.1 cups
+# required by kde-plasma/plasma-workspace-5.24.5-r1::gentoo
+# required by kde-plasma/plasma-browser-integration-5.24.5::gentoo
+# required by kde-plasma/plasma-meta-5.24.5::gentoo[browser-integration]
+# required by plasma-meta (argument)
+>=kde-frameworks/prison-5.94.0 qml
+# required by kde-frameworks/qqc2-desktop-style-5.94.0::gentoo
+# required by kde-plasma/plasma-desktop-5.24.5::gentoo
+# required by kde-plasma/plasma-meta-5.24.5::gentoo
+# required by plasma-meta (argument)
+>=kde-frameworks/sonnet-5.94.0 qml
+# required by kde-plasma/kwin-5.24.5-r2::gentoo[multimedia]
+# required by kde-plasma/plasma-desktop-5.24.5::gentoo
+# required by kde-plasma/plasma-meta-5.24.5::gentoo
+# required by plasma-meta (argument)
+>=dev-qt/qtmultimedia-5.15.4-r1 gstreamer qml
+# required by media-sound/pulseaudio-daemon-15.99.1-r2::gentoo[alsa,alsa-plugin]
+# required by media-sound/pulseaudio-15.99.1-r1::gentoo[daemon]
+>=media-plugins/alsa-plugins-1.2.6 pulseaudio
+# required by www-client/firefox-100.0.2::gentoo[system-libvpx]
+# required by firefox (argument)
+>=media-libs/libvpx-1.11.0 postproc
+# required by www-client/chromium-102.0.5005.61::gentoo
+# required by chromium (argument)
+>=dev-libs/libxml2-2.9.14-r1 icu
+# required by www-client/chromium-102.0.5005.61::gentoo[system-harfbuzz]
+# required by chromium (argument)
+>=media-libs/harfbuzz-4.3.0 icu
+# required by www-client/chromium-102.0.5005.61::gentoo
+# required by chromium (argument)
+>=net-libs/nodejs-18.1.0 inspector
+# 
+>=kde-plasma/kwin-5.25.0 lock
+# required by kde-frameworks/plasma-5.95.0-r3::gentoo
+# required by kde-plasma/plasma-nm-5.25.0::gentoo
+# required by kde-plasma/plasma-meta-5.24.5::gentoo[networkmanager]
+# required by @selected
+# required by @world (argument)
+>=kde-frameworks/kconfig-5.95.0 qml
+# required by app-containers/lxd-5.0.0::gentoo
+# required by lxd (argument)
+>=dev-libs/raft-0.13.0 lz4
+# required by app-containers/lxd-5.0.0::gentoo
+# required by lxd (argument)
+>=dev-util/xdelta-3.0.11-r1 lzma
+# required by app-containers/lxd-5.0.0::gentoo
+# required by lxd (argument)
+>=sys-fs/squashfs-tools-4.5.1 lzma
+# required by media-sound/gnome-music-42.1::gentoo
+# required by gnome-base/gnome-extra-apps-41.0::gentoo[tracker]
+# required by gnome-base/gnome-40.0::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=media-plugins/grilo-plugins-0.3.14 tracker
+# required by media-gfx/gnome-photos-42.0::gentoo
+# required by gnome-base/gnome-extra-apps-41.0::gentoo[tracker]
+# required by gnome-base/gnome-40.0::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=dev-libs/libgdata-0.18.1 gnome-online-accounts
+# required by media-gfx/gnome-photos-42.0::gentoo
+# required by gnome-base/gnome-extra-apps-41.0::gentoo[tracker]
+# required by gnome-base/gnome-40.0::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=media-libs/gegl-0.4.36-r1 cairo raw
+# required by media-gfx/gnome-photos-42.0::gentoo
+# required by gnome-base/gnome-extra-apps-41.0::gentoo[tracker]
+# required by gnome-base/gnome-40.0::gentoo[extras]
+# required by gnome-base/gnome (argument)
+=media-libs/gegl-0.4.34 cairo raw
+# required by app-misc/tracker-miners-3.3.1::gentoo[pdf]
+# required by media-gfx/gnome-photos-42.0::gentoo
+# required by gnome-base/gnome-extra-apps-41.0::gentoo[tracker]
+# required by gnome-base/gnome-40.0::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=app-text/poppler-22.06.0 cairo
+# required by dev-libs/libmanette-0.2.6::gentoo[udev]
+# required by games-puzzle/quadrapassel-40.2::gentoo
+# required by gnome-base/gnome-extra-apps-41.0::gentoo[games]
+# required by gnome-base/gnome-40.0::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=dev-libs/libgudev-237-r1 introspection
+# required by gnome-base/gnome-settings-daemon-42.2::gentoo[cups]
+# required by gnome-extra/gnome-tweaks-40.10::gentoo
+# required by gnome-base/gnome-extra-apps-41.0::gentoo
+# required by gnome-base/gnome-40.0::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=net-print/cups-2.4.2-r1 dbus
+# required by media-sound/sound-juicer-3.38.0::gentoo
+# required by gnome-base/gnome-extra-apps-41.0::gentoo
+# required by gnome-base/gnome-40.0::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=gnome-base/gvfs-1.50.2 cdda
+# required by media-sound/sound-juicer-3.38.0::gentoo
+# required by gnome-base/gnome-extra-apps-41.0::gentoo
+# required by gnome-base/gnome-40.0::gentoo[extras]
+# required by gnome-base/gnome (argument)
+=gnome-base/gvfs-1.50.1-r1 cdda
+# required by media-sound/sound-juicer-3.38.0::gentoo
+# required by gnome-base/gnome-extra-apps-41.0::gentoo
+# required by gnome-base/gnome-40.0::gentoo[extras]
+# required by gnome-base/gnome (argument)
+=gnome-base/gvfs-1.50.0 cdda
+# required by media-sound/sound-juicer-3.38.0::gentoo
+# required by gnome-base/gnome-extra-apps-41.0::gentoo
+# required by gnome-base/gnome-40.0::gentoo[extras]
+# required by gnome-base/gnome (argument)
+=gnome-base/gvfs-1.48.1-r1 cdda
+# required by media-video/cheese-41.1::gentoo
+# required by gnome-base/gnome-extra-apps-41.0::gentoo
+# required by gnome-base/gnome-40.0::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=media-libs/gst-plugins-base-1.20.2 theora
+# required by gnome-base/gnome-shell-42.2::gentoo
+# required by gnome-extra/chrome-gnome-shell-10-r5::gentoo
+>=gnome-base/gnome-control-center-42.3 networkmanager
+# required by gnome-base/gnome-shell-42.2::gentoo
+# required by gnome-extra/chrome-gnome-shell-10-r5::gentoo
+=gnome-base/gnome-control-center-42.2 networkmanager
+# required by gnome-base/gnome-shell-42.2::gentoo
+# required by gnome-extra/chrome-gnome-shell-10-r5::gentoo
+=gnome-base/gnome-control-center-42.1 networkmanager
+# required by gnome-base/gnome-control-center-42.3::gentoo[cups]
+# required by gnome-base/gnome-shell-42.2::gentoo
+# required by gnome-extra/chrome-gnome-shell-10-r5::gentoo
+>=net-fs/samba-4.16.1 client
+# required by gnome-extra/gnome-contacts-42.0::gentoo
+# required by gnome-base/gnome-core-apps-41.3::gentoo
+# required by gnome-base/gnome-40.0::gentoo
+# required by gnome-base/gnome (argument)
+>=dev-libs/folks-0.15.5 eds
+# required by gnome-extra/gnome-contacts-42.0::gentoo
+# required by gnome-base/gnome-core-apps-41.3::gentoo
+# required by gnome-base/gnome-40.0::gentoo
+# required by gnome-base/gnome (argument)
+>=gnome-extra/evolution-data-server-3.44.3 vala
+# required by gnome-extra/evolution-data-server-3.44.3::gentoo[vala]
+# required by dev-libs/folks-0.15.5::gentoo[eds]
+# required by gnome-extra/gnome-contacts-42.0::gentoo
+# required by gnome-base/gnome-core-apps-41.3::gentoo
+# required by gnome-base/gnome-40.0::gentoo
+# required by gnome-base/gnome (argument)
+>=dev-libs/libical-3.0.14-r1 vala
+# required by gnome-extra/evolution-data-server-3.44.3::gentoo[gnome-online-accounts,vala,-oauth]
+# required by dev-libs/folks-0.15.5::gentoo[eds]
+# required by gnome-extra/gnome-contacts-42.0::gentoo
+# required by gnome-base/gnome-core-apps-41.3::gentoo
+# required by gnome-base/gnome-40.0::gentoo
+# required by gnome-base/gnome (argument)
+>=dev-libs/libgdata-0.18.1 vala
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by net-libs/webkit-gtk-2.36.3::local
+# required by gnome-extra/yelp-42.1::gentoo
+# required by gnome-base/gnome-core-apps-41.3::gentoo
+# required by gnome-base/gnome-40.0::gentoo
+# required by gnome-base/gnome (argument)
+>=dev-ruby/minitest-5.16.1 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by net-libs/webkit-gtk-2.36.3::local
+# required by gnome-extra/yelp-42.1::gentoo
+# required by gnome-base/gnome-core-apps-41.3::gentoo
+# required by gnome-base/gnome-40.0::gentoo
+# required by gnome-base/gnome (argument)
+>=dev-ruby/power_assert-2.0.1 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by net-libs/webkit-gtk-2.36.3::local
+# required by gnome-extra/yelp-42.1::gentoo
+# required by gnome-base/gnome-core-apps-41.3::gentoo
+# required by gnome-base/gnome-40.0::gentoo
+# required by gnome-base/gnome (argument)
+>=dev-ruby/rake-13.0.6-r1 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by net-libs/webkit-gtk-2.36.3::local
+# required by gnome-extra/yelp-42.1::gentoo
+# required by gnome-base/gnome-core-apps-41.3::gentoo
+# required by gnome-base/gnome-40.0::gentoo
+# required by gnome-base/gnome (argument)
+>=dev-ruby/test-unit-3.5.3 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-2.7.6::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/racc-1.6.0::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby27]
+>=dev-ruby/rbs-2.5.1 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-2.7.6::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/racc-1.6.0::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby27]
+>=dev-ruby/rexml-3.2.5-r1 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-2.7.6::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/racc-1.6.0::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby27]
+>=dev-ruby/rss-0.2.9-r1 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-2.7.6::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/racc-1.6.0::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby27]
+>=dev-ruby/typeprof-0.21.2 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-2.7.6::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/racc-1.6.0::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby27]
+>=dev-ruby/bundler-2.3.8 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-2.7.6::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/racc-1.6.0::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby27]
+>=dev-ruby/did_you_mean-1.6.1 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-2.7.6::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/racc-1.6.0::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby27]
+>=dev-ruby/json-2.6.2 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo[rdoc]
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-2.7.6::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/racc-1.6.0::gentoo[ruby_targets_ruby27]
+>=dev-ruby/rdoc-6.4.0 ruby_targets_ruby31
+# required by dev-lang/ruby-3.1.2-r1::gentoo
+# required by dev-ruby/rbs-2.5.1::gentoo[ruby_targets_ruby31]
+# required by dev-ruby/typeprof-0.21.2::gentoo[ruby_targets_ruby27]
+>=virtual/rubygems-17 ruby_targets_ruby31
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-2.7.6::gentoo
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/racc-1.6.0::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby27]
+# required by dev-lang/ruby-3.1.2-r1::gentoo[rdoc]
+# required by dev-ruby/rbs-2.5.1::gentoo[ruby_targets_ruby31]
+# required by dev-ruby/typeprof-0.21.2::gentoo[ruby_targets_ruby27]
+>=dev-ruby/rubygems-3.3.8 ruby_targets_ruby31
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.1.2-r1::gentoo[rdoc]
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby31]
+# required by dev-ruby/racc-1.6.0::gentoo
+>=dev-ruby/psych-4.0.4 ruby_targets_ruby31
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.1.2-r1::gentoo[rdoc]
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby31]
+# required by dev-ruby/racc-1.6.0::gentoo
+>=dev-ruby/kpeg-1.3.1 ruby_targets_ruby31
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.1.2-r1::gentoo[rdoc]
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby31]
+# required by dev-ruby/rubygems-3.3.8::gentoo
+# required by virtual/rubygems-17::gentoo[ruby_targets_ruby27]
+# required by dev-lang/ruby-2.7.6::gentoo
+# required by dev-ruby/rbs-2.5.1::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/typeprof-0.21.2::gentoo[ruby_targets_ruby31]
+>=dev-ruby/racc-1.6.0 ruby_targets_ruby31
+# required by dev-ruby/psych-4.0.4::gentoo[ruby_targets_ruby31]
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.1.2-r1::gentoo[rdoc]
+# required by virtual/ruby-ssl-12::gentoo[ruby_targets_ruby31]
+# required by dev-ruby/racc-1.6.0::gentoo
+>=dev-ruby/stringio-3.0.2 ruby_targets_ruby31
+# required by dev-ruby/racc-1.6.0::gentoo[ruby_targets_ruby31]
+# required by dev-ruby/rdoc-6.4.0::gentoo[ruby_targets_ruby31]
+# required by dev-lang/ruby-3.1.2-r1::gentoo[rdoc]
+# required by dev-ruby/rbs-2.5.1::gentoo[ruby_targets_ruby31]
+# required by dev-ruby/typeprof-0.21.2::gentoo[ruby_targets_ruby31]
+>=virtual/ruby-ssl-12 ruby_targets_ruby31

@@ -1,0 +1,8 @@
+app-admin/augeas ~*
+app-doc/NaturalDocs ~*
+app-arch/rpm ~*
+dev-ruby/asciidoctor ~*
+dev-cpp/yaml-cpp ~*
+app-doc/doxygen ~*
+dev-python/graphviz ~*
+dev-lang/tk ~*

@@ -1,0 +1,4 @@
+x11-misc/lightdm ~*
+sys-apps/accountsservice ~*
+x11-misc/lightdm-gtk-greeter ~*
+gnome-base/gnome-common ~*

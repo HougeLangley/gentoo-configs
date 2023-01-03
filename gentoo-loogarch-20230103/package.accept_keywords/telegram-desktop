@@ -1,0 +1,16 @@
+net-im/telegram-desktop ~*
+dev-cpp/abseil-cpp ~*
+dev-libs/libdispatch ~*
+dev-qt/qtimageformats ~*
+media-libs/libtgvoip ~*
+media-libs/openal ~*
+media-libs/rnnoise ~*
+media-libs/tg_owt ~*
+dev-cpp/range-v3 ~*
+dev-cpp/ms-gsl ~*
+media-libs/libvpx ~*
+media-libs/openh264 ~*
+net-libs/usrsctp ~*
+sys-devel/llvm ~*
+sys-devel/clang-common ~*
+dev-libs/crc32c ~*

@@ -1,0 +1,22 @@
+gui-wm/sway tray wallpapers X
+# required by gui-wm/sway-1.7::gentoo[wallpapers]
+# required by sway (argument)
+>=x11-libs/gdk-pixbuf-2.42.8 jpeg
+# required by gui-wm/sway-1.7::gentoo[wallpapers]
+# required by sway (argument)
+=x11-libs/gdk-pixbuf-2.42.6-r1 jpeg
+# required by gui-wm/sway-1.7::gentoo[wallpapers]
+# required by sway (argument)
+=x11-libs/gdk-pixbuf-2.42.6 jpeg
+# required by gui-wm/sway-1.7::gentoo
+# required by @selected
+# required by @world (argument)
+>=gui-libs/wlroots-0.15.1 X
+# required by gui-wm/sway-1.7::gentoo
+# required by @selected
+# required by @world (argument)
+=gui-libs/wlroots-0.15.0-r2 X
+# required by gui-wm/sway-1.7::gentoo
+# required by @selected
+# required by @world (argument)
+=gui-libs/wlroots-0.15.0-r1 X

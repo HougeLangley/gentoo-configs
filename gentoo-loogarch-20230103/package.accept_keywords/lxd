@@ -1,0 +1,9 @@
+app-containers/lxd ~*
+app-containers/lxc ~*
+dev-libs/dqlite ~*
+dev-libs/raft ~*
+net-dns/dnsmasq ~*
+net-firewall/ebtables ~*
+sys-fs/lxcfs ~*
+sys-fs/squashfs-tools ~*
+net-misc/ethertypes ~*

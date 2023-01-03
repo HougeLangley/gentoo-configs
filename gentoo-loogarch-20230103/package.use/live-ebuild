@@ -1,0 +1,2 @@
+# needed by live gcc ebuild that needs to fetch from https git repo
+net-misc/curl ssl

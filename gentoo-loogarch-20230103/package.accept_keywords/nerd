@@ -1,0 +1,3 @@
+media-fonts/sarasa-mono-sc-nerd ~*
+media-fonts/nerd-fonts ~*
+>=media-fonts/nerd-fonts-2.2.2 **

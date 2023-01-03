@@ -1,0 +1,887 @@
+diff -Naur ghc-9.0.2/compiler/GHC/CmmToAsm/Reg/Graph/TrivColorable.hs ghc-9.0.2-reg/compiler/GHC/CmmToAsm/Reg/Graph/TrivColorable.hs
+--- ghc-9.0.2/compiler/GHC/CmmToAsm/Reg/Graph/TrivColorable.hs	2021-09-15 23:27:31.000000000 +0800
++++ ghc-9.0.2-reg/compiler/GHC/CmmToAsm/Reg/Graph/TrivColorable.hs	2022-12-11 20:46:26.037596000 +0800
+@@ -120,6 +120,7 @@
+                             ArchMipseb    -> panic "trivColorable ArchMipseb"
+                             ArchMipsel    -> panic "trivColorable ArchMipsel"
+                             ArchS390X     -> panic "trivColorable ArchS390X"
++                            ArchLoongArch64->panic "trivColorable ArchLoongArch64"
+                             ArchJavaScript-> panic "trivColorable ArchJavaScript"
+                             ArchUnknown   -> panic "trivColorable ArchUnknown")
+         , count2        <- accSqueeze 0 cALLOCATABLE_REGS_INTEGER
+@@ -151,6 +152,7 @@
+                             ArchMipseb    -> panic "trivColorable ArchMipseb"
+                             ArchMipsel    -> panic "trivColorable ArchMipsel"
+                             ArchS390X     -> panic "trivColorable ArchS390X"
++                            ArchLoongArch64->panic "trivColorable ArchLoongArch64"
+                             ArchJavaScript-> panic "trivColorable ArchJavaScript"
+                             ArchUnknown   -> panic "trivColorable ArchUnknown")
+         , count2        <- accSqueeze 0 cALLOCATABLE_REGS_FLOAT
+@@ -184,6 +186,7 @@
+                             ArchMipseb    -> panic "trivColorable ArchMipseb"
+                             ArchMipsel    -> panic "trivColorable ArchMipsel"
+                             ArchS390X     -> panic "trivColorable ArchS390X"
++                            ArchLoongArch64->panic "trivColorable ArchLoongArch64"
+                             ArchJavaScript-> panic "trivColorable ArchJavaScript"
+                             ArchUnknown   -> panic "trivColorable ArchUnknown")
+         , count2        <- accSqueeze 0 cALLOCATABLE_REGS_DOUBLE
+diff -Naur ghc-9.0.2/compiler/GHC/CmmToAsm/Reg/Linear/FreeRegs.hs ghc-9.0.2-reg/compiler/GHC/CmmToAsm/Reg/Linear/FreeRegs.hs
+--- ghc-9.0.2/compiler/GHC/CmmToAsm/Reg/Linear/FreeRegs.hs	2021-09-15 23:27:31.000000000 +0800
++++ ghc-9.0.2-reg/compiler/GHC/CmmToAsm/Reg/Linear/FreeRegs.hs	2022-12-11 20:43:07.291361000 +0800
+@@ -83,5 +83,6 @@
+    ArchAlpha     -> panic "maxSpillSlots ArchAlpha"
+    ArchMipseb    -> panic "maxSpillSlots ArchMipseb"
+    ArchMipsel    -> panic "maxSpillSlots ArchMipsel"
++   ArchLoongArch64->panic "maxSpillSlots ArchLoongArch64"
+    ArchJavaScript-> panic "maxSpillSlots ArchJavaScript"
+    ArchUnknown   -> panic "maxSpillSlots ArchUnknown"
+diff -Naur ghc-9.0.2/compiler/GHC/CmmToAsm/Reg/Linear.hs ghc-9.0.2-reg/compiler/GHC/CmmToAsm/Reg/Linear.hs
+--- ghc-9.0.2/compiler/GHC/CmmToAsm/Reg/Linear.hs	2021-10-19 19:20:00.000000000 +0800
++++ ghc-9.0.2-reg/compiler/GHC/CmmToAsm/Reg/Linear.hs	2022-12-11 20:47:41.033685000 +0800
+@@ -225,6 +225,7 @@
+       ArchAlpha      -> panic "linearRegAlloc ArchAlpha"
+       ArchMipseb     -> panic "linearRegAlloc ArchMipseb"
+       ArchMipsel     -> panic "linearRegAlloc ArchMipsel"
++      ArchLoongArch64-> panic "linearRegAlloc ArchLoongArch64"
+       ArchJavaScript -> panic "linearRegAlloc ArchJavaScript"
+       ArchUnknown    -> panic "linearRegAlloc ArchUnknown"
+  where
+diff -Naur ghc-9.0.2/compiler/GHC/CmmToAsm/Reg/Target.hs ghc-9.0.2-reg/compiler/GHC/CmmToAsm/Reg/Target.hs
+--- ghc-9.0.2/compiler/GHC/CmmToAsm/Reg/Target.hs	2021-09-15 23:27:31.000000000 +0800
++++ ghc-9.0.2-reg/compiler/GHC/CmmToAsm/Reg/Target.hs	2022-12-11 20:47:16.731656000 +0800
+@@ -51,6 +51,7 @@
+       ArchAlpha     -> panic "targetVirtualRegSqueeze ArchAlpha"
+       ArchMipseb    -> panic "targetVirtualRegSqueeze ArchMipseb"
+       ArchMipsel    -> panic "targetVirtualRegSqueeze ArchMipsel"
++      ArchLoongArch64->panic "targetVirtualRegSqueeze ArchLoongArch64"
+       ArchJavaScript-> panic "targetVirtualRegSqueeze ArchJavaScript"
+       ArchUnknown   -> panic "targetVirtualRegSqueeze ArchUnknown"
+ 
+@@ -70,6 +71,7 @@
+       ArchAlpha     -> panic "targetRealRegSqueeze ArchAlpha"
+       ArchMipseb    -> panic "targetRealRegSqueeze ArchMipseb"
+       ArchMipsel    -> panic "targetRealRegSqueeze ArchMipsel"
++      ArchLoongArch64->panic "targetRealRegSqueeze ArchLoongArch64"
+       ArchJavaScript-> panic "targetRealRegSqueeze ArchJavaScript"
+       ArchUnknown   -> panic "targetRealRegSqueeze ArchUnknown"
+ 
+@@ -88,6 +90,7 @@
+       ArchAlpha     -> panic "targetClassOfRealReg ArchAlpha"
+       ArchMipseb    -> panic "targetClassOfRealReg ArchMipseb"
+       ArchMipsel    -> panic "targetClassOfRealReg ArchMipsel"
++      ArchLoongArch64->panic "targetClassOfRealReg ArchLoongArch64"
+       ArchJavaScript-> panic "targetClassOfRealReg ArchJavaScript"
+       ArchUnknown   -> panic "targetClassOfRealReg ArchUnknown"
+ 
+@@ -106,6 +109,7 @@
+       ArchAlpha     -> panic "targetMkVirtualReg ArchAlpha"
+       ArchMipseb    -> panic "targetMkVirtualReg ArchMipseb"
+       ArchMipsel    -> panic "targetMkVirtualReg ArchMipsel"
++      ArchLoongArch64->panic "targetMkVirtualReg ArchLoongArch64"
+       ArchJavaScript-> panic "targetMkVirtualReg ArchJavaScript"
+       ArchUnknown   -> panic "targetMkVirtualReg ArchUnknown"
+ 
+@@ -124,6 +128,7 @@
+       ArchAlpha     -> panic "targetRegDotColor ArchAlpha"
+       ArchMipseb    -> panic "targetRegDotColor ArchMipseb"
+       ArchMipsel    -> panic "targetRegDotColor ArchMipsel"
++      ArchLoongArch64->panic "targetRegDotColor ArchLoongArch64"
+       ArchJavaScript-> panic "targetRegDotColor ArchJavaScript"
+       ArchUnknown   -> panic "targetRegDotColor ArchUnknown"
+ 
+diff -Naur ghc-9.0.2/compiler/GHC/CmmToAsm.hs ghc-9.0.2-reg/compiler/GHC/CmmToAsm.hs
+--- ghc-9.0.2/compiler/GHC/CmmToAsm.hs	2021-09-15 23:27:31.000000000 +0800
++++ ghc-9.0.2-reg/compiler/GHC/CmmToAsm.hs	2022-12-11 20:49:34.211822000 +0800
+@@ -182,6 +182,7 @@
+       ArchAlpha     -> panic "nativeCodeGen: No NCG for Alpha"
+       ArchMipseb    -> panic "nativeCodeGen: No NCG for mipseb"
+       ArchMipsel    -> panic "nativeCodeGen: No NCG for mipsel"
++      ArchLoongArch64->panic "nativeCodeGen: No NCG for LoongArch64"
+       ArchUnknown   -> panic "nativeCodeGen: No NCG for unknown arch"
+       ArchJavaScript-> panic "nativeCodeGen: No NCG for JavaScript"
+ 
+diff -Naur ghc-9.0.2/compiler/GHC/Driver/Pipeline.hs ghc-9.0.2-reg/compiler/GHC/Driver/Pipeline.hs
+--- ghc-9.0.2/compiler/GHC/Driver/Pipeline.hs	2021-12-25 21:13:59.000000000 +0800
++++ ghc-9.0.2-reg/compiler/GHC/Driver/Pipeline.hs	2022-12-11 20:42:18.858303000 +0800
+@@ -964,6 +964,11 @@
+               ++ ["+avx512pf"| isAvx512pfEnabled dflags ]
+               ++ ["+bmi"     | isBmiEnabled dflags      ]
+               ++ ["+bmi2"    | isBmi2Enabled dflags     ]
++	
++	abi :: String
++        abi = case platformArch (targetPlatform dflags) of
++                ArchLoongArch64 -> "lp64d"
++                _           -> ""
+ 
+ -- -----------------------------------------------------------------------------
+ -- | Each phase in the pipeline returns the next phase to execute, and the
+diff -Naur ghc-9.0.2/compiler/GHC/Platform/LoongArch64.hs ghc-9.0.2-reg/compiler/GHC/Platform/LoongArch64.hs
+--- ghc-9.0.2/compiler/GHC/Platform/LoongArch64.hs	1970-01-01 08:00:00.000000000 +0800
++++ ghc-9.0.2-reg/compiler/GHC/Platform/LoongArch64.hs	2022-10-26 01:45:47.862740000 +0800
+@@ -0,0 +1,10 @@
++{-# LANGUAGE CPP #-}
++
++module GHC.Platform.LoongArch64 where
++
++import GHC.Prelude
++
++#define MACHREGS_NO_REGS 0
++#define MACHREGS_loongarch64 1
++#include "CodeGen.Platform.h"
++
+diff -Naur ghc-9.0.2/compiler/GHC/Platform/Regs.hs ghc-9.0.2-reg/compiler/GHC/Platform/Regs.hs
+--- ghc-9.0.2/compiler/GHC/Platform/Regs.hs	2021-09-15 23:27:31.000000000 +0800
++++ ghc-9.0.2-reg/compiler/GHC/Platform/Regs.hs	2022-12-11 20:48:56.156775000 +0800
+@@ -15,6 +15,7 @@
+ import qualified GHC.Platform.SPARC      as SPARC
+ import qualified GHC.Platform.X86        as X86
+ import qualified GHC.Platform.X86_64     as X86_64
++import qualified GHC.Platform.LoongArch64 as LoongArch64
+ import qualified GHC.Platform.NoRegs     as NoRegs
+ 
+ -- | Returns 'True' if this global register is stored in a caller-saves
+@@ -31,6 +32,7 @@
+    ArchSPARC   -> SPARC.callerSaves
+    ArchARM {}  -> ARM.callerSaves
+    ArchAArch64 -> AArch64.callerSaves
++   ArchLoongArch64 -> LoongArch64.callerSaves
+    arch
+     | arch `elem` [ArchPPC, ArchPPC_64 ELF_V1, ArchPPC_64 ELF_V2] ->
+         PPC.callerSaves
+@@ -53,6 +55,7 @@
+    ArchSPARC   -> SPARC.activeStgRegs
+    ArchARM {}  -> ARM.activeStgRegs
+    ArchAArch64 -> AArch64.activeStgRegs
++   ArchLoongArch64 -> LoongArch64.activeStgRegs
+    arch
+     | arch `elem` [ArchPPC, ArchPPC_64 ELF_V1, ArchPPC_64 ELF_V2] ->
+         PPC.activeStgRegs
+@@ -70,6 +73,7 @@
+    ArchSPARC   -> SPARC.haveRegBase
+    ArchARM {}  -> ARM.haveRegBase
+    ArchAArch64 -> AArch64.haveRegBase
++   ArchLoongArch64 -> LoongArch64.haveRegBase
+    arch
+     | arch `elem` [ArchPPC, ArchPPC_64 ELF_V1, ArchPPC_64 ELF_V2] ->
+         PPC.haveRegBase
+@@ -87,6 +91,7 @@
+    ArchSPARC   -> SPARC.globalRegMaybe
+    ArchARM {}  -> ARM.globalRegMaybe
+    ArchAArch64 -> AArch64.globalRegMaybe
++   ArchLoongArch64 -> LoongArch64.globalRegMaybe
+    arch
+     | arch `elem` [ArchPPC, ArchPPC_64 ELF_V1, ArchPPC_64 ELF_V2] ->
+         PPC.globalRegMaybe
+@@ -104,6 +109,7 @@
+    ArchSPARC   -> SPARC.freeReg
+    ArchARM {}  -> ARM.freeReg
+    ArchAArch64 -> AArch64.freeReg
++   ArchLoongArch64 -> LoongArch64.freeReg
+    arch
+     | arch `elem` [ArchPPC, ArchPPC_64 ELF_V1, ArchPPC_64 ELF_V2] ->
+         PPC.freeReg
+diff -Naur ghc-9.0.2/compiler/ghc.cabal.in ghc-9.0.2-reg/compiler/ghc.cabal.in
+--- ghc-9.0.2/compiler/ghc.cabal.in	2021-12-25 21:13:59.000000000 +0800
++++ ghc-9.0.2-reg/compiler/ghc.cabal.in	2022-12-11 21:41:14.355705000 +0800
+@@ -259,6 +259,7 @@
+         GHC.Platform.Regs
+         GHC.Platform.ARM
+         GHC.Platform.AArch64
++        GHC.Platform.LoongArch64
+         GHC.Platform.NoRegs
+         GHC.Platform.PPC
+         GHC.Platform.S390X
+diff -Naur ghc-9.0.2/configure ghc-9.0.2-reg/configure
+--- ghc-9.0.2/configure	2021-12-25 21:14:27.000000000 +0800
++++ ghc-9.0.2-reg/configure	2022-12-11 21:49:05.503208000 +0800
+@@ -4025,6 +4025,12 @@
+   ia64)
+     BuildArch="ia64"
+     ;;
++  loongarch64)
++    BuildArch="loongarch64"
++    ;;
++  loongarch32)
++    BuildArch="loongarch32"
++    ;;
+   m68k*)
+     BuildArch="m68k"
+     ;;
+@@ -4193,6 +4199,12 @@
+   ia64)
+     HostArch="ia64"
+     ;;
++  loongarch64)
++    HostArch="loongarch64"
++    ;;
++  loongarch32)
++    HostArch="loongarch32"
++    ;;
+   m68k*)
+     HostArch="m68k"
+     ;;
+@@ -4350,6 +4362,12 @@
+   ia64)
+     TargetArch="ia64"
+     ;;
++  loongarch64)
++    TargetArch="loongarch64"
++    ;;
++  loongarch32)
++    TargetArch="loongarch32"
++    ;;
+   m68k*)
+     TargetArch="m68k"
+     ;;
+@@ -4516,6 +4534,12 @@
+   ia64)
+     TargetArch="ia64"
+     ;;
++  loongarch64)
++    TargetArch="loongarch64"
++    ;;
++  loongarch32)
++    TargetArch="loongarch32"
++    ;;
+   m68k*)
+     TargetArch="m68k"
+     ;;
+@@ -4973,7 +4997,7 @@
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether target supports a registerised ABI" >&5
+ printf %s "checking whether target supports a registerised ABI... " >&6; }
+ case "$TargetArch" in
+-    i386|x86_64|powerpc|powerpc64|powerpc64le|s390x|arm|aarch64)
++    i386|x86_64|powerpc|powerpc64|powerpc64le|s390x|arm|aarch64|loongarch64)
+         UnregisterisedDefault=NO
+         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ printf "%s\n" "yes" >&6; }
+@@ -5024,7 +5048,7 @@
+ case "$Unregisterised" in
+     NO)
+         case "$TargetArch" in
+-            ia64|powerpc64|powerpc64le|s390x)
++            ia64|powerpc64|powerpc64le|s390x|loongarch64)
+                 TablesNextToCodeDefault=NO
+                 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ printf "%s\n" "no" >&6; }
+@@ -5082,7 +5106,7 @@
+ 
+ 
+ case "$target" in
+-    powerpc64-*|powerpc64le-*|powerpc-ibm-aix*|s390x-ibm-linux)
++    powerpc64-*|powerpc64le-*|powerpc-ibm-aix*|s390x-ibm-linux|loongarch-*)
+         TargetHasRTSLinker=NO
+         ;;
+     *)
+@@ -9295,7 +9319,7 @@
+ # versions of LLVM simultaneously, but that stopped working around
+ # 3.5/3.6 release of LLVM.
+ LlvmMinVersion=9  # inclusive
+-LlvmMaxVersion=13 # not inclusive
++LlvmMaxVersion=17 # not inclusive
+ 
+ 
+ sUPPORTED_LLVM_VERSION_MIN=$(echo \($LlvmMinVersion\) | sed 's/\./,/')
+@@ -10694,7 +10718,10 @@
+         mipsel)
+             test -z "$2" || eval "$2=ArchMipsel"
+             ;;
+-        hppa|hppa1_1|ia64|m68k|nios2|riscv32|riscv64|rs6000|s390|sh4|vax)
++        loongarch64)
++            test -z "$2" || eval "$2=ArchLoongArch64"
++            ;;
++        hppa|hppa1_1|ia64|loongarch32|m68k|nios2|riscv32|riscv64|rs6000|s390|sh4|vax)
+             test -z "$2" || eval "$2=ArchUnknown"
+             ;;
+         *)
+diff -Naur ghc-9.0.2/configure.ac ghc-9.0.2-reg/configure.ac
+--- ghc-9.0.2/configure.ac	2021-12-25 21:13:59.000000000 +0800
++++ ghc-9.0.2-reg/configure.ac	2022-12-11 20:38:15.944843000 +0800
+@@ -283,7 +283,7 @@
+ 
+ AC_MSG_CHECKING(whether target supports a registerised ABI)
+ case "$TargetArch" in
+-    i386|x86_64|powerpc|powerpc64|powerpc64le|s390x|arm|aarch64)
++    i386|x86_64|powerpc|powerpc64|powerpc64le|s390x|arm|aarch64|loongarch64)
+         UnregisterisedDefault=NO
+         AC_MSG_RESULT([yes])
+         ;;
+@@ -318,7 +318,7 @@
+ case "$Unregisterised" in
+     NO)
+         case "$TargetArch" in
+-            ia64|powerpc64|powerpc64le|s390x)
++            ia64|powerpc64|powerpc64le|s390x|loongarch64)
+                 TablesNextToCodeDefault=NO
+                 AC_MSG_RESULT([no])
+                 ;;
+@@ -347,7 +347,7 @@
+ dnl ** Does target have runtime linker support?
+ dnl --------------------------------------------------------------
+ case "$target" in
+-    powerpc64-*|powerpc64le-*|powerpc-ibm-aix*|s390x-ibm-linux)
++    powerpc64-*|powerpc64le-*|powerpc-ibm-aix*|s390x-ibm-linux|loongarch64-*)
+         TargetHasRTSLinker=NO
+         ;;
+     *)
+@@ -719,7 +719,7 @@
+ # versions of LLVM simultaneously, but that stopped working around
+ # 3.5/3.6 release of LLVM.
+ LlvmMinVersion=9  # inclusive
+-LlvmMaxVersion=13 # not inclusive
++LlvmMaxVersion=17 # not inclusive
+ AC_SUBST([LlvmMinVersion])
+ AC_SUBST([LlvmMaxVersion])
+ sUPPORTED_LLVM_VERSION_MIN=$(echo \($LlvmMinVersion\) | sed 's/\./,/')
+diff -Naur ghc-9.0.2/includes/CodeGen.Platform.hs ghc-9.0.2-reg/includes/CodeGen.Platform.hs
+--- ghc-9.0.2/includes/CodeGen.Platform.hs	2021-09-15 23:27:31.000000000 +0800
++++ ghc-9.0.2-reg/includes/CodeGen.Platform.hs	2022-12-11 21:06:26.806087000 +0800
+@@ -380,6 +380,74 @@
+ # define f14 30
+ # define f15 31
+ 
++#elif defined(MACHREGS_loongarch64)
++
++# define zero 0
++# define ra   1
++# define tp   2
++# define sp   3
++# define a0   4
++# define a1   5
++# define a2   6
++# define a3   7
++# define a4   8
++# define a5   9
++# define a6  10
++# define a7  11
++# define t0  12
++# define t1  13
++# define t2  14
++# define t3  15
++# define t4  16
++# define t5  17
++# define t6  18
++# define t7  19
++# define t8  20
++# define u0  21
++# define fp  22
++# define s0  23
++# define s1  24
++# define s2  25
++# define s3  26
++# define s4  27
++# define s5  28
++# define s6  29
++# define s7  30
++# define s8  31
++
++# define fa0  32
++# define fa1  33
++# define fa2  34
++# define fa3  35
++# define fa4  36
++# define fa5  37
++# define fa6  38
++# define fa7  39
++# define ft0  40
++# define ft1  41
++# define ft2  42
++# define ft3  43
++# define ft4  44
++# define ft5  45
++# define ft6  46
++# define ft7  47
++# define ft8  48
++# define ft9  49
++# define ft10 50
++# define ft11 51
++# define ft12 52
++# define ft13 53
++# define ft14 54
++# define ft15 55
++# define fs0  56
++# define fs1  57
++# define fs2  58
++# define fs3  59
++# define fs4  60
++# define fs5  61
++# define fs6  62
++# define fs7  63
++
+ #endif
+ 
+ callerSaves :: GlobalReg -> Bool
+diff -Naur ghc-9.0.2/includes/stg/MachRegsForHost.h ghc-9.0.2-reg/includes/stg/MachRegsForHost.h
+--- ghc-9.0.2/includes/stg/MachRegsForHost.h	2021-09-15 23:27:31.000000000 +0800
++++ ghc-9.0.2-reg/includes/stg/MachRegsForHost.h	2022-12-11 19:53:03.942329000 +0800
+@@ -71,6 +71,10 @@
+ #define MACHREGS_s390x    1
+ #endif
+ 
++#if defined(loongarch64_HOST_ARCH)
++#define MACHREGS_loongarch64  1
++#endif
++
+ #endif
+ 
+ #include "MachRegs.h"
+diff -Naur ghc-9.0.2/includes/stg/MachRegs.h ghc-9.0.2-reg/includes/stg/MachRegs.h
+--- ghc-9.0.2/includes/stg/MachRegs.h	2021-09-15 23:27:31.000000000 +0800
++++ ghc-9.0.2-reg/includes/stg/MachRegs.h	2022-12-11 19:52:25.469290000 +0800
+@@ -663,6 +663,59 @@
+ #define CALLER_SAVES_D5
+ #define CALLER_SAVES_D6
+ 
++/* -----------------------------------------------------------------------------
++   The loongarch64 register mapping
++
++   Register    | Role(s)                                 | Call effect
++   ------------+-----------------------------------------+-------------
++   zero        | Hard-wired zero                         | -
++   ra          | Return address                          | caller-saved
++   tp          | Thread pointer                          | -
++   sp          | Stack pointer                           | callee-saved
++   tp          | Thread pointer                          | callee-saved
++   a0,a1       | Arguments / return values               | caller-saved
++   a2..a7      | Arguments                               | caller-saved
++   t0..t8      | -                                       | caller-saved
++   u0          | -                                       | -
++   fp          | Frame pointer                           | callee-saved
++   s0..s8      | -                                       | callee-saved
++   fa0,fa1     | Arguments / return values               | caller-saved
++   fa2..fa7    | Arguments                               | caller-saved
++   ft0..ft15   | -                                       | caller-saved
++   fs0..fs7    | -                                       | callee-saved
++
++   Each general purpose register as well as each floating-point
++   register is 64 bits wide.
++
++   -------------------------------------------------------------------------- */
++   
++#elif defined(MACHREGS_loongarch64)
++
++#define REG(x) __asm__("$" #x)
++
++#define REG_Base        s0
++#define REG_Sp          s1
++#define REG_Hp          s2
++#define REG_R1          s3
++#define REG_R2          s4
++#define REG_R3          s5
++#define REG_R4          s6
++#define REG_R5          s7
++#define REG_SpLim       s8
++
++#define REG_F1          fs0
++#define REG_F2          fs1
++#define REG_F3          fs2
++#define REG_F4          fs3
++
++#define REG_D1          fs4
++#define REG_D2          fs5
++#define REG_D3          fs6
++#define REG_D4          fs7
++
++#define MAX_REAL_FLOAT_REG   4
++#define MAX_REAL_DOUBLE_REG  4
++
+ #else
+ 
+ #error Cannot find platform to give register info for
+diff -Naur ghc-9.0.2/includes/stg/SMP.h ghc-9.0.2-reg/includes/stg/SMP.h
+--- ghc-9.0.2/includes/stg/SMP.h	2021-09-15 23:27:32.000000000 +0800
++++ ghc-9.0.2-reg/includes/stg/SMP.h	2022-12-11 20:11:06.089551000 +0800
+@@ -377,6 +377,8 @@
+     __asm__ __volatile__ ("" : : : "memory");
+ #elif defined(arm_HOST_ARCH) || defined(aarch64_HOST_ARCH)
+     __asm__ __volatile__ ("dmb  st" : : : "memory");
++#elif defined(loongarch64_HOST_ARCH)
++    __asm__ __volatile__ ("dbar 0" : : : "memory");
+ #else
+ #error memory barriers unimplemented on this architecture
+ #endif
+@@ -401,6 +403,8 @@
+     __asm__ __volatile__ ("dmb" : : : "memory");
+ #elif defined(aarch64_HOST_ARCH)
+     __asm__ __volatile__ ("dmb sy" : : : "memory");
++#elif defined(loongarch64_HOST_ARCH)
++    __asm__ __volatile__ ("dbar 0" : : : "memory");
+ #else
+ #error memory barriers unimplemented on this architecture
+ #endif
+@@ -426,6 +430,8 @@
+     __asm__ __volatile__ ("dmb" : : : "memory");
+ #elif defined(aarch64_HOST_ARCH)
+     __asm__ __volatile__ ("dmb sy" : : : "memory");
++#elif defined(loongarch64_HOST_ARCH)
++    __asm__ __volatile__ ("dbar 0" : : : "memory");
+ #else
+ #error memory barriers unimplemented on this architecture
+ #endif
+diff -Naur ghc-9.0.2/libraries/base/System/Info.hs ghc-9.0.2-reg/libraries/base/System/Info.hs
+--- ghc-9.0.2/libraries/base/System/Info.hs	2021-07-06 17:42:06.000000000 +0800
++++ ghc-9.0.2-reg/libraries/base/System/Info.hs	2022-12-11 20:21:18.181319000 +0800
+@@ -89,6 +89,8 @@
+ --    * "powerpc64le"
+ --    * "riscv32"
+ --    * "riscv64"
++--    * "loongarch32"
++--    * "loongarch64"
+ --    * "rs6000"
+ --    * "s390"
+ --    * "s390x"
+diff -Naur ghc-9.0.2/libraries/ghc-boot/GHC/Platform.hs ghc-9.0.2-reg/libraries/ghc-boot/GHC/Platform.hs
+--- ghc-9.0.2/libraries/ghc-boot/GHC/Platform.hs	2021-09-15 23:27:32.000000000 +0800
++++ ghc-9.0.2-reg/libraries/ghc-boot/GHC/Platform.hs	2022-12-11 20:54:19.800178000 +0800
+@@ -131,6 +131,7 @@
+         | ArchMipseb
+         | ArchMipsel
+         | ArchJavaScript
++	| ArchLoongArch64
+         deriving (Read, Show, Eq)
+ 
+ -- Note [Platform Syntax]
+@@ -172,6 +173,7 @@
+   ArchMipseb -> "mipseb"
+   ArchMipsel -> "mipsel"
+   ArchJavaScript -> "js"
++  ArchLoongArch64 -> "loongarch64"
+ 
+ isARM :: Arch -> Bool
+ isARM (ArchARM {}) = True
+@@ -338,6 +340,7 @@
+ platformCConvNeedsExtension platform = case platformArch platform of
+   ArchPPC_64 _ -> True
+   ArchS390X    -> True
++  ArchLoongArch64 -> True
+   _            -> False
+ 
+ 
+diff -Naur ghc-9.0.2/llvm-passes ghc-9.0.2-reg/llvm-passes
+--- ghc-9.0.2/llvm-passes	2021-07-06 17:42:06.000000000 +0800
++++ ghc-9.0.2-reg/llvm-passes	2022-12-11 20:36:47.262462000 +0800
+@@ -1,5 +1,5 @@
+ [
+-(0, "-mem2reg -globalopt -lower-expect"),
+-(1, "-O1 -globalopt"),
+-(2, "-O2")
++(0, "-optlo-passes='module(default<O0>,function(mem2reg),globalopt,function(lower-expect))'  -fno-llvm-tbaa -O0"),
++(1, "-optlo-passes='module(default<O1>,globalopt)' -O1 -fno-llvm-tbaa"),
++(2, "-optlo-passes='module(default<O2>)' -O2 -fno-llvm-tbaa")
+ ]
+diff -Naur ghc-9.0.2/llvm-targets ghc-9.0.2-reg/llvm-targets
+--- ghc-9.0.2/llvm-targets	2021-12-25 21:13:59.000000000 +0800
++++ ghc-9.0.2-reg/llvm-targets	2022-10-26 16:44:11.002411000 +0800
+@@ -1,23 +1,23 @@
+ [("i386-unknown-windows", ("e-m:x-p:32:32-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:32-n8:16:32-a:0:32-S32", "pentium4", ""))
+ ,("i686-unknown-windows", ("e-m:x-p:32:32-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:32-n8:16:32-a:0:32-S32", "pentium4", ""))
+ ,("x86_64-unknown-windows", ("e-m:w-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128", "x86-64", ""))
+-,("arm-unknown-linux-gnueabi", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm7tdmi", "+strict-align"))
+-,("arm-unknown-linux-gnueabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm1176jzf-s", "+strict-align"))
+-,("arm-unknown-linux-musleabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm1176jzf-s", "+strict-align"))
+-,("armv6-unknown-linux-gnueabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm1136jf-s", "+strict-align"))
+-,("armv6-unknown-linux-musleabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm1136jf-s", "+strict-align"))
+-,("armv6l-unknown-linux-gnueabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm1176jzf-s", "+strict-align"))
+-,("armv6l-unknown-linux-musleabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm1176jzf-s", "+strict-align"))
+-,("armv7-unknown-linux-gnueabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", ""))
+-,("armv7-unknown-linux-musleabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", ""))
+-,("armv7a-unknown-linux-gnueabi", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", ""))
+-,("armv7a-unknown-linux-musleabi", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", ""))
+-,("armv7a-unknown-linux-gnueabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", ""))
+-,("armv7a-unknown-linux-musleabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", ""))
+-,("armv7l-unknown-linux-gnueabi", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", ""))
+-,("armv7l-unknown-linux-musleabi", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", ""))
+-,("armv7l-unknown-linux-gnueabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", ""))
+-,("armv7l-unknown-linux-musleabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", ""))
++,("arm-unknown-linux-gnueabi", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm7tdmi", "-vfp2 -vfp2sp -vfp3 -vfp3d16 -vfp3d16sp -vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 -fp64 -d32 -neon -sha2 -aes -dotprod -fp16fml -bf16 -mve.fp -fpregs +strict-align"))
++,("arm-unknown-linux-gnueabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm1176jzf-s", "+vfp2 +vfp2sp -vfp3 -vfp3d16 -vfp3d16sp -vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 -d32 -neon -sha2 -aes -fp16fml +strict-align"))
++,("arm-unknown-linux-musleabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm1176jzf-s", "+vfp2 +vfp2sp -vfp3 -vfp3d16 -vfp3d16sp -vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 -d32 -neon -sha2 -aes -fp16fml +strict-align"))
++,("armv6-unknown-linux-gnueabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm1136jf-s", "+vfp2 +vfp2sp -vfp3 -vfp3d16 -vfp3d16sp -vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 -d32 -neon -sha2 -aes -fp16fml +strict-align"))
++,("armv6-unknown-linux-musleabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm1136jf-s", "+vfp2 +vfp2sp -vfp3 -vfp3d16 -vfp3d16sp -vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 -d32 -neon -sha2 -aes -fp16fml +strict-align"))
++,("armv6l-unknown-linux-gnueabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm1176jzf-s", "+vfp2 +vfp2sp -vfp3 -vfp3d16 -vfp3d16sp -vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 -d32 -neon -sha2 -aes -fp16fml +strict-align"))
++,("armv6l-unknown-linux-musleabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm1176jzf-s", "+vfp2 +vfp2sp -vfp3 -vfp3d16 -vfp3d16sp -vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 -d32 -neon -sha2 -aes -fp16fml +strict-align"))
++,("armv7-unknown-linux-gnueabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", "+vfp2 +vfp2sp +vfp3 +vfp3d16 +vfp3d16sp +vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 +d32 +neon -sha2 -aes -fp16fml"))
++,("armv7-unknown-linux-musleabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", "+vfp2 +vfp2sp +vfp3 +vfp3d16 +vfp3d16sp +vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 +d32 +neon -sha2 -aes -fp16fml"))
++,("armv7a-unknown-linux-gnueabi", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", "+vfp2 +vfp2sp +vfp3 +vfp3d16 +vfp3d16sp +vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 +d32 +neon -sha2 -aes -fp16fml"))
++,("armv7a-unknown-linux-musleabi", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", "+vfp2 +vfp2sp +vfp3 +vfp3d16 +vfp3d16sp +vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 +d32 +neon -sha2 -aes -fp16fml"))
++,("armv7a-unknown-linux-gnueabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", "+vfp2 +vfp2sp +vfp3 +vfp3d16 +vfp3d16sp +vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 +d32 +neon -sha2 -aes -fp16fml"))
++,("armv7a-unknown-linux-musleabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", "+vfp2 +vfp2sp +vfp3 +vfp3d16 +vfp3d16sp +vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 +d32 +neon -sha2 -aes -fp16fml"))
++,("armv7l-unknown-linux-gnueabi", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", "+vfp2 +vfp2sp +vfp3 +vfp3d16 +vfp3d16sp +vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 +d32 +neon -sha2 -aes -fp16fml"))
++,("armv7l-unknown-linux-musleabi", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", "+vfp2 +vfp2sp +vfp3 +vfp3d16 +vfp3d16sp +vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 +d32 +neon -sha2 -aes -fp16fml"))
++,("armv7l-unknown-linux-gnueabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", "+vfp2 +vfp2sp +vfp3 +vfp3d16 +vfp3d16sp +vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 +d32 +neon -sha2 -aes -fp16fml"))
++,("armv7l-unknown-linux-musleabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", "+vfp2 +vfp2sp +vfp3 +vfp3d16 +vfp3d16sp +vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 +d32 +neon -sha2 -aes -fp16fml"))
+ ,("aarch64-unknown-linux-gnu", ("e-m:e-i8:8:32-i16:16:32-i64:64-i128:128-n32:64-S128", "generic", "+neon"))
+ ,("aarch64-unknown-linux-musl", ("e-m:e-i8:8:32-i16:16:32-i64:64-i128:128-n32:64-S128", "generic", "+neon"))
+ ,("aarch64-unknown-linux", ("e-m:e-i8:8:32-i16:16:32-i64:64-i128:128-n32:64-S128", "generic", "+neon"))
+@@ -31,24 +31,31 @@
+ ,("x86_64-unknown-linux-musl", ("e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128", "x86-64", ""))
+ ,("x86_64-unknown-linux", ("e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128", "x86-64", ""))
+ ,("x86_64-unknown-linux-android", ("e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128", "x86-64", "+sse4.2 +popcnt +cx16"))
+-,("armv7-unknown-linux-androideabi", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", "+fpregs +vfp2 +vfp2sp +vfp3 +vfp3d16 +vfp3d16sp +vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 +d32 +neon -crypto -fp16fml"))
+-,("aarch64-unknown-linux-android", ("e-m:e-i8:8:32-i16:16:32-i64:64-i128:128-n32:64-S128", "generic", "+neon"))
+-,("armv7a-unknown-linux-androideabi", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", "+fpregs +vfp2 +vfp2sp +vfp3 +vfp3d16 +vfp3d16sp +vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 +d32 +neon -crypto -fp16fml"))
+-,("powerpc64le-unknown-linux-gnu", ("e-m:e-i64:64-n32:64", "ppc64le", ""))
+-,("powerpc64le-unknown-linux-musl", ("e-m:e-i64:64-n32:64", "ppc64le", "+secure-plt"))
+-,("powerpc64le-unknown-linux", ("e-m:e-i64:64-n32:64", "ppc64le", ""))
++,("armv7-unknown-linux-androideabi", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", "+vfp2 +vfp2sp +vfp3 +vfp3d16 +vfp3d16sp +vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 +d32 +neon -sha2 -aes -fp16fml"))
++,("aarch64-unknown-linux-android", ("e-m:e-i8:8:32-i16:16:32-i64:64-i128:128-n32:64-S128", "generic", "+neon +outline-atomics"))
++,("armv7a-unknown-linux-androideabi", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", "+vfp2 +vfp2sp +vfp3 +vfp3d16 +vfp3d16sp +vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 +d32 +neon -sha2 -aes -fp16fml"))
++,("powerpc64le-unknown-linux-gnu", ("e-m:e-i64:64-n32:64-S128-v256:256:256-v512:512:512", "ppc64le", ""))
++,("powerpc64le-unknown-linux-musl", ("e-m:e-i64:64-n32:64-S128-v256:256:256-v512:512:512", "ppc64le", "+secure-plt"))
++,("powerpc64le-unknown-linux", ("e-m:e-i64:64-n32:64-S128-v256:256:256-v512:512:512", "ppc64le", ""))
+ ,("s390x-ibm-linux", ("E-m:e-i1:8:16-i8:8:16-i64:64-f128:64-a:8:16-n32:64", "z10", ""))
+-,("i386-apple-darwin", ("e-m:o-p:32:32-p270:32:32-p271:32:32-p272:64:64-f64:32:64-f80:128-n8:16:32-S128", "penryn", ""))
+-,("x86_64-apple-darwin", ("e-m:o-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128", "penryn", ""))
+-,("arm64-apple-darwin", ("e-m:o-i64:64-i128:128-n32:64-S128", "apple-a12", "+v8.3a +fp-armv8 +neon +crc +crypto +fullfp16 +ras +lse +rdm +rcpc +zcm +zcz +sha2 +aes"))
+-,("armv7-apple-ios", ("e-m:o-p:32:32-Fi8-f64:32:64-v64:32:64-v128:32:128-a:0:32-n32-S32", "generic", ""))
++,("riscv64-unknown-linux-gnu", ("e-m:e-p:64:64-i64:64-i128:128-n64-S128", "", "+m +a +f +d +c +relax -save-restore"))
++,("riscv64-unknown-linux", ("e-m:e-p:64:64-i64:64-i128:128-n64-S128", "", "+m +a +f +d +c +relax -save-restore"))
++,("loongarch64-unknown-linux-gnu", ("e-m:e-p:64:64-i64:64-i128:128-n64-S128", "", "+f +d"))
++,("loongarch64-unknown-linux", ("e-m:e-p:64:64-i64:64-i128:128-n64-S128", "", "+f +d"))
++,("i386-apple-darwin", ("e-m:o-p:32:32-p270:32:32-p271:32:32-p272:64:64-f64:32:64-f80:128-n8:16:32-S128", "yonah", ""))
++,("x86_64-apple-darwin", ("e-m:o-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128", "core2", ""))
++,("arm64-apple-darwin", ("e-m:o-i64:64-i128:128-n32:64-S128", "apple-a7", "+fp-armv8 +neon +crypto +zcm +zcz +sha2 +aes"))
++,("armv7-apple-ios", ("e-m:o-p:32:32-Fi8-f64:32:64-v64:32:64-v128:32:128-a:0:32-n32-S32", "generic", "+vfp2 +vfp2sp +vfp3 +vfp3d16 +vfp3d16sp +vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 +d32 +neon -sha2 -aes -fp16fml"))
+ ,("aarch64-apple-ios", ("e-m:o-i64:64-i128:128-n32:64-S128", "apple-a7", "+fp-armv8 +neon +crypto +zcm +zcz +sha2 +aes"))
+ ,("i386-apple-ios", ("e-m:o-p:32:32-p270:32:32-p271:32:32-p272:64:64-f64:32:64-f80:128-n8:16:32-S128", "yonah", ""))
+ ,("x86_64-apple-ios", ("e-m:o-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128", "core2", ""))
+-,("amd64-portbld-freebsd", ("e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128", "x86-64", ""))
++,("x86_64-portbld-freebsd", ("e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128", "x86-64", ""))
+ ,("x86_64-unknown-freebsd", ("e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128", "x86-64", ""))
+ ,("aarch64-unknown-freebsd", ("e-m:e-i8:8:32-i16:16:32-i64:64-i128:128-n32:64-S128", "generic", "+neon"))
+-,("armv6-unknown-freebsd-gnueabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm1176jzf-s", "+strict-align"))
+-,("armv7-unknown-freebsd-gnueabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "generic", "+strict-align"))
+-,("arm-unknown-nto-qnx-eabi", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm7tdmi", "+strict-align"))
++,("armv6-unknown-freebsd-gnueabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm1176jzf-s", "+vfp2 +vfp2sp -vfp3 -vfp3d16 -vfp3d16sp -vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 -d32 -neon -sha2 -aes -fp16fml +strict-align"))
++,("armv7-unknown-freebsd-gnueabihf", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "cortex-a8", "+vfp2 +vfp2sp +vfp3 +vfp3d16 +vfp3d16sp +vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 +fp64 +d32 +neon -sha2 -aes -fp16fml +strict-align"))
++,("aarch64-unknown-netbsd", ("e-m:e-i8:8:32-i16:16:32-i64:64-i128:128-n32:64-S128", "generic", "+neon"))
++,("x86_64-unknown-openbsd", ("e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128", "x86-64", ""))
++,("i386-unknown-openbsd", ("e-m:e-p:32:32-p270:32:32-p271:32:32-p272:64:64-f64:32:64-f80:32-n8:16:32-S128", "i586", ""))
++,("arm-unknown-nto-qnx-eabi", ("e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64", "arm7tdmi", "-vfp2 -vfp2sp -vfp3 -vfp3d16 -vfp3d16sp -vfp3sp -fp16 -vfp4 -vfp4d16 -vfp4d16sp -vfp4sp -fp-armv8 -fp-armv8d16 -fp-armv8d16sp -fp-armv8sp -fullfp16 -fp64 -d32 -neon -sha2 -aes -dotprod -fp16fml -bf16 -mve.fp -fpregs +strict-align"))
+ ]
+diff -Naur ghc-9.0.2/m4/fptools.m4 ghc-9.0.2-reg/m4/fptools.m4
+--- ghc-9.0.2/m4/fptools.m4	2021-12-25 21:13:59.000000000 +0800
++++ ghc-9.0.2-reg/m4/fptools.m4	2022-12-11 21:56:52.394706000 +0800
+@@ -231,7 +231,10 @@
+         mipsel)
+             test -z "[$]2" || eval "[$]2=ArchMipsel"
+             ;;
+-        hppa|hppa1_1|ia64|m68k|nios2|riscv32|riscv64|rs6000|s390|sh4|vax)
++        loongarch64)
++            test -z "[$]2" || eval "[$]2=ArchLoongArch64"
++            ;;
++        hppa|hppa1_1|ia64|loongarch32|m68k|nios2|riscv32|riscv64|rs6000|s390|sh4|vax)
+             test -z "[$]2" || eval "[$]2=ArchUnknown"
+             ;;
+         *)
+@@ -1990,6 +1993,12 @@
+   ia64)
+     $2="ia64"
+     ;;
++  loongarch64*)
++    $2="loongarch64"
++    ;;
++  loongarch64*)
++    $2="loongarch32"
++    ;;
+   m68k*)
+     $2="m68k"
+     ;;
+diff -Naur ghc-9.0.2/mk/config.mk.in ghc-9.0.2-reg/mk/config.mk.in
+--- ghc-9.0.2/mk/config.mk.in	2021-10-19 19:20:00.000000000 +0800
++++ ghc-9.0.2-reg/mk/config.mk.in	2022-12-11 20:17:17.774007000 +0800
+@@ -179,7 +179,7 @@
+ # We don't support load/store barriers pre-ARMv7. See #10433.
+ ArchSupportsSMP=$(if $(filter $(ARM_ISA),ARMv5 ARMv6),NO,YES)
+ else
+-ArchSupportsSMP=$(strip $(patsubst $(TargetArch_CPP), YES, $(findstring $(TargetArch_CPP), i386 x86_64 sparc powerpc powerpc64 powerpc64le s390x aarch64)))
++ArchSupportsSMP=$(strip $(patsubst $(TargetArch_CPP), YES, $(findstring $(TargetArch_CPP), i386 x86_64 sparc powerpc powerpc64 powerpc64le s390x aarch64 loongarch64)))
+ endif
+ 
+ # The THREADED_RTS requires `BaseReg` to be in a register and the
+diff -Naur ghc-9.0.2/rts/linker/Elf.c ghc-9.0.2-reg/rts/linker/Elf.c
+--- ghc-9.0.2/rts/linker/Elf.c	2021-12-25 21:13:59.000000000 +0800
++++ ghc-9.0.2-reg/rts/linker/Elf.c	2022-12-11 19:50:25.506167000 +0800
+@@ -413,6 +413,12 @@
+ #if defined(EM_AARCH64)
+       case EM_AARCH64: IF_DEBUG(linker,debugBelch( "aarch64" )); break;
+ #endif
++#if defined(EM_LOONGARCH)
++      case EM_LOONGARCH:  IF_DEBUG(linker,debugBelch( "loongarch" ));
++          errorBelch("%s: RTS linker not implemented on loongarch",
++                     oc->fileName);
++          return 0;
++#endif
+        default:       IF_DEBUG(linker,debugBelch( "unknown" ));
+                      errorBelch("%s: unknown architecture (e_machine == %d)"
+                                 , oc->fileName, ehdr->e_machine);
+diff -Naur ghc-9.0.2/rts/rts.cabal.in ghc-9.0.2-reg/rts/rts.cabal.in
+--- ghc-9.0.2/rts/rts.cabal.in	2021-12-17 17:15:04.000000000 +0800
++++ ghc-9.0.2-reg/rts/rts.cabal.in	2022-12-11 19:53:41.271367000 +0800
+@@ -441,7 +441,7 @@
+         c-sources: adjustor/NativeSparc.c
+ 
+     -- Use assembler STG entrypoint on archictures where it is used
+-    if arch(ppc) || arch(ppc64) || arch(s390x) || arch(riscv64)
++    if arch(ppc) || arch(ppc64) || arch(s390x) || arch(riscv64) || arch(loongarch64)
+       asm-sources: StgCRunAsm.S
+ 
+     c-sources: Adjustor.c
+diff -Naur ghc-9.0.2/rts/StgCRunAsm.S ghc-9.0.2-reg/rts/StgCRunAsm.S
+--- ghc-9.0.2/rts/StgCRunAsm.S	2021-09-15 23:27:32.000000000 +0800
++++ ghc-9.0.2-reg/rts/StgCRunAsm.S	2022-12-11 19:56:05.226514000 +0800
+@@ -232,6 +232,126 @@
+ 	.size StgReturn, .-StgReturn
+ 
+ 	.section	.note.GNU-stack,"",@progbits
++
++#elif defined(loongarch64_HOST_ARCH)
++# define STACK_FRAME_SIZE (RESERVED_C_STACK_BYTES+160)
++	.text
++	.align 1
++	.globl StgRun
++	.type StgRun, @function
++StgRun:
++	.cfi_startproc
++	addi.d	$sp,$sp,-160
++	.cfi_def_cfa_offset 160
++	/* save callee-saved registers plus ra */
++	st.d	$ra,$sp,152
++	st.d    $fp,$sp,144
++	st.d	$s0,$sp,136
++	st.d	$s1,$sp,128
++	st.d	$s2,$sp,120
++	st.d	$s3,$sp,112
++	st.d	$s4,$sp,104
++	st.d	$s5,$sp,96
++	st.d	$s6,$sp,88
++	st.d	$s7,$sp,80
++	st.d	$s8,$sp,72
++	fst.d	$fs0,$sp,56
++	fst.d	$fs1,$sp,48
++	fst.d	$fs2,$sp,40
++	fst.d	$fs3,$sp,32
++	fst.d	$fs4,$sp,24
++	fst.d	$fs5,$sp,16
++	fst.d	$fs6,$sp,8
++	fst.d	$fs7,$sp,0
++	/* allocate stack frame */
++	li.d	$t0,RESERVED_C_STACK_BYTES
++	sub.d	$sp,$sp,$t0
++	.cfi_def_cfa_offset STACK_FRAME_SIZE
++	.cfi_offset 1, -8
++	.cfi_offset 22, -16
++	.cfi_offset 23, -24
++	.cfi_offset 24, -32
++	.cfi_offset 25, -40
++	.cfi_offset 26, -48
++	.cfi_offset 27, -56
++	.cfi_offset 28, -64
++	.cfi_offset 29, -72
++	.cfi_offset 30, -80
++	.cfi_offset 31, -88
++	.cfi_offset 56, -104
++	.cfi_offset 57, -112
++	.cfi_offset 58, -120
++	.cfi_offset 59, -128
++	.cfi_offset 60, -136
++	.cfi_offset 61, -144
++	.cfi_offset 62, -152
++	.cfi_offset 63, -160
++	/* set STGs BaseReg from Loongarch a1 */
++	move	$s0,$a1
++	/* jump to STG function */
++	jr	$a0
++	.cfi_endproc
++	.size StgRun, .-StgRun
++
++	.text
++	.align 2
++	.globl StgReturn
++	.type StgReturn, @function
++StgReturn:
++	.cfi_startproc
++	/* set return value from STGs R1 (Loongarch64 s3) */
++	move	$a0,$s3
++	/* deallocate stack frame */
++	li.d	$t0,RESERVED_C_STACK_BYTES
++	add.d	$sp,$sp,$t0
++	.cfi_def_cfa_offset 160
++	/* restore callee-saved registers and ra */
++	ld.d	$ra,$sp,152
++	.cfi_restore 1
++	ld.d	$fp,$sp,144
++	.cfi_restore 22
++	ld.d	$s0,$sp,136
++	.cfi_restore 23 
++	ld.d	$s1,$sp,128
++	.cfi_restore 24
++	ld.d	$s2,$sp,120
++	.cfi_restore 25
++	ld.d	$s3,$sp,112
++	.cfi_restore 26
++	ld.d	$s4,$sp,104
++	.cfi_restore 27
++	ld.d	$s5,$sp,96
++	.cfi_restore 28
++	ld.d	$s6,$sp,88
++	.cfi_restore 29
++	ld.d	$s7,$sp,80
++	.cfi_restore 30
++	ld.d	$s8,$sp,72
++	.cfi_restore 31
++	fld.d	$fs0,$sp,56
++	.cfi_restore 56
++	fld.d	$fs1,$sp,48
++	.cfi_restore 57
++	fld.d	$fs2,$sp,40
++	.cfi_restore 58
++	fld.d	$fs3,$sp,32
++	.cfi_restore 59
++	fld.d	$fs4,$sp,24
++	.cfi_restore 60
++	fld.d	$fs5,$sp,16
++	.cfi_restore 61
++	fld.d	$fs6,$sp,8
++	.cfi_restore 62
++	fld.d	$fs7,$sp,0
++	.cfi_restore 63
++	addi.d	$sp,$sp,160
++	.cfi_def_cfa_offset 0
++	/* jump back to caller of StgRun() */
++	ret
++	.cfi_endproc
++	.size StgReturn, .-StgReturn
++
++	.section	.note.GNU-stack,"",@progbits
+ #endif
+ 
+ #endif /* !USE_MINIINTERPRETER */
+diff -Naur ghc-9.0.2/utils/genapply/Main.hs ghc-9.0.2-reg/utils/genapply/Main.hs
+--- ghc-9.0.2/utils/genapply/Main.hs	2021-07-06 17:42:07.000000000 +0800
++++ ghc-9.0.2-reg/utils/genapply/Main.hs	2022-12-11 19:41:39.466631000 +0800
+@@ -17,6 +17,11 @@
+ -- We improperly include *HOST* macros for our target...
+ #include "../../includes/ghcconfig.h"
+ 
++-- If the bootstrap compiler is unregisterised it defines
++-- UnregisterisedCompiler, which implies NO_REGS.  But we only want to
++-- define NO_REGS if building an unregisterised compiler.
++#undef UnregisterisedCompiler
++
+ -- ...so that this header defines the right stuff.  It is the RTS's host, but
+ -- our target, as we are generating code that uses that RTS.
+ #include "../../includes/stg/MachRegsForHost.h"
+diff -Naur ghc-9.0.2/utils/llvm-targets/gen-data-layout.sh ghc-9.0.2-reg/utils/llvm-targets/gen-data-layout.sh
+--- ghc-9.0.2/utils/llvm-targets/gen-data-layout.sh	2021-09-15 23:27:32.000000000 +0800
++++ ghc-9.0.2-reg/utils/llvm-targets/gen-data-layout.sh	2022-12-11 19:40:15.513545000 +0800
+@@ -76,6 +76,9 @@
+     "powerpc64le-unknown-linux"
+     # Linux s390x
+     "s390x-ibm-linux"
++    # Linux loongarch64
++    "loongarch64-unknown-linux-gnu"
++    "loongarch64-unknown-linux"
+ 
+     #########################
+     # Darwin

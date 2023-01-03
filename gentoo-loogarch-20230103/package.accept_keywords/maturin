@@ -1,0 +1,3 @@
+dev-util/maturin ~*
+dev-python/setuptools-rust ~*
+dev-python/semantic_version ~*

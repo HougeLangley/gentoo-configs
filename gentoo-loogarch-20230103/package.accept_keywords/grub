@@ -1,0 +1,3 @@
+#sys-boot/grub ~*
+>=sys-boot/grub-2.11_pre20220828 **
+sys-boot/gnu-efi ~*

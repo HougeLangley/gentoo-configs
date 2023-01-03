@@ -1,0 +1,3 @@
+dev-lang/ghc ~*
+app-admin/haskell-updater ~*
+app-text/dos2unix ~*

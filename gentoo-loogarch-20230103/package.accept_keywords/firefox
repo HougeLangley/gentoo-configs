@@ -1,0 +1,7 @@
+www-client/firefox ~*
+app-arch/zip ~*
+dev-util/cbindgen ~*
+sys-devel/llvm ~*
+sys-libs/libomp ~*
+sys-devel/lld ~*
+sys-devel/clang-common ~*
